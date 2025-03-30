@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joel Sahli | Fullstack Software Engineer</title>
+  <link href="src/style.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-white">
+  <!-- Navigation Bar -->
+  <nav class="fixed w-full bg-slate-900/90 backdrop-blur-sm z-10">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="#" class="text-2xl font-bold">JS</a>
+      <div class="hidden md:flex space-x-8">
+        <a href="#" class="hover:text-blue-400 transition">Home</a>
+        <a href="#" class="hover:text-blue-400 transition">About</a>
+        <a href="#" class="hover:text-blue-400 transition">Services</a>
+        <a href="#" class="hover:text-blue-400 transition">Skills</a>
+        <a href="#" class="hover:text-blue-400 transition">Career</a>
+      </div>
+      <div class="flex space-x-4">
+        <a href="#" class="hover:text-blue-400 transition">DE</a>
+        <a href="#" class="text-blue-400 font-medium">EN</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="min-h-screen flex items-center relative overflow-hidden">
+    <!-- Background pattern -->
+    <div class="absolute inset-0 bg-slate-900">
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute w-full h-full" style="background-image: linear-gradient(120deg, #3b4b8b 0%, #1e2a5a 100%);"></div>
+        <div class="absolute w-full h-full opacity-30" 
+             style="background-image: url('data:image/svg+xml,%3Csvg width=%22100%22 height=%22100%22 viewBox=%220 0 100 100%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cpath d=%22M0 0h100v100H0z%22 fill=%22none%22/%3E%3Cpath d=%22M0 0l100 100M100 0L0 100%22 stroke=%22%23ffffff%22 stroke-width=%220.5%22/%3E%3C/svg%3E'); background-size: 50px 50px;">
+        </div>
+      </div>
+    </div>
+
+    <div class="container mx-auto px-4 z-10 flex flex-col md:flex-row items-center justify-between">
+      <div class="text-center md:text-left md:w-1/2 mb-10 md:mb-0">
+        <h1 class="text-5xl md:text-6xl font-bold mb-4">Joel Sahli</h1>
+        <p class="text-xl md:text-2xl text-gray-300 mb-6">
+          Fullstack Software Engineer / DevOps Engineer / Agile Leader
+        </p>
+        <p class="text-lg text-gray-400">Based in Switzerland</p>
+      </div>
+      <div class="md:w-1/2 flex justify-center md:justify-end">
+        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-blue-500/30 shadow-xl shadow-blue-500/20">
+          <img src="" alt="Joel Sahli" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/400?text=Profile+Image'">
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg>
+    </div>
+  </section>
+</body>
+</html>
