@@ -1,1 +1,173 @@
 @import "tailwindcss";
+
+/* Google Fonts - Inter for body/headings */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+/* Google Fonts - Fira Code for monospace */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap');
+
+/* CSS Custom Properties - Sapphire Theme Variables */
+:root {
+  /* Primary sapphire color scheme */
+  --color-sapphire: #0F52BA;
+  --color-sapphire-hover: #0B46A0;
+  --color-sapphire-border: #0D4AA8;
+  --color-sapphire-light: #1E5FCC;
+
+  /* Semantic color mappings for easy theme changes */
+  --color-primary: var(--color-sapphire);
+  --color-primary-hover: var(--color-sapphire-hover);
+  --color-primary-border: var(--color-sapphire-border);
+
+  /* Accent color (red) for current job and section dividers */
+  --color-accent: #EF4444;
+  --color-accent-dark: #DC2626;
+
+  /* Background colors */
+  --bg-primary: #0F172A; /* slate-900 */
+  --bg-secondary: #1E293B; /* slate-800 */
+  --bg-tertiary: #334155; /* slate-700 */
+
+  /* Text colors */
+  --text-primary: #FFFFFF;
+  --text-secondary: #CBD5E1; /* slate-300 */
+  --text-muted: #94A3B8; /* slate-400 */
+}
+
+/* Base styles */
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Monospace elements - code snippets and tech badges */
+code,
+pre,
+.font-mono,
+.tech-badge {
+  font-family: 'Fira Code', 'JetBrains Mono', 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-feature-settings: 'liga' 1, 'calt' 1; /* Enable ligatures in Fira Code */
+}
+
+/* Smooth scrolling with accessibility respect */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Focus visible states for keyboard navigation - ensures 4.5:1 contrast ratio */
+*:focus-visible {
+  outline: 3px solid var(--color-sapphire);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Remove focus outline for mouse users but keep for keyboard */
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Animated gradient border for featured project cards */
+@keyframes gradient-border {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.gradient-border-animated {
+  position: relative;
+  background: linear-gradient(
+    90deg,
+    var(--color-sapphire),
+    var(--color-sapphire-light),
+    var(--color-accent),
+    var(--color-sapphire)
+  );
+  background-size: 200% 200%;
+  animation: gradient-border 3s ease infinite;
+  padding: 2px;
+  border-radius: 0.5rem;
+}
+
+/* Fallback for reduced motion - static gradient */
+@media (prefers-reduced-motion: reduce) {
+  .gradient-border-animated {
+    animation: none;
+    background: var(--color-sapphire-border);
+  }
+}
+
+/* Entrance animations with reduced-motion fallback */
+@media (prefers-reduced-motion: no-preference) {
+  .fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Ensure images are responsive and lazy-loaded */
+img[loading="lazy"] {
+  content-visibility: auto;
+}
+
+/* Custom scrollbar styling (optional, maintains dark theme) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-sapphire-border);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-sapphire);
+}
+
+/* Skip to main content link for accessibility */
+.skip-to-main {
+  position: absolute;
+  left: -9999px;
+  z-index: 999;
+  padding: 1rem;
+  background-color: var(--color-sapphire);
+  color: white;
+  text-decoration: none;
+  border-radius: 0 0 0.25rem 0.25rem;
+}
+
+.skip-to-main:focus {
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+}
