@@ -48,7 +48,7 @@
       </div>
       <div class="md:w-1/2 flex justify-center md:justify-end">
         <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-blue-500/30 shadow-xl shadow-blue-500/20">
-          <img src="" alt="Joel Sahli" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/400?text=Profile+Image'">
+          <img src="assets/img/joel-cv.jpeg" alt="Joel Sahli" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/400?text=Profile+Image'">
         </div>
       </div>
     </div>
@@ -58,6 +58,357 @@
       <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
       </svg>
+    </div>
+  </section>
+
+  <!-- About Me Section -->
+  <section id="about" class="py-0 relative min-h-screen">
+    <!-- Mountain Image Background with Parallax -->
+    <div class="absolute inset-0 bg-fixed bg-center bg-cover z-0" 
+         style="background-image: url('assets/img/churfirsten-big.jpg');">
+      <div class="absolute inset-0 bg-slate-900/40"></div>
+    </div>
+    
+    <!-- Content Container - positioned in bottom half -->
+    <div class="absolute bottom-0 left-0 right-0 min-h-[50vh] bg-slate-900/70 backdrop-blur-sm z-10">
+      <!-- Red line separator at the top of content area -->
+      <div class="w-full h-4 bg-gradient-to-r from-red-500 to-red-700"></div>
+      
+      <div class="container mx-auto px-4 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div>
+            <h2 class="text-4xl font-bold mb-6">About me</h2>
+            <h3 class="text-2xl text-gray-300 mb-4">A Software Engineer from Switzerland</h3>
+          </div>
+          
+          <div>
+            <p class="text-gray-300 mb-6">
+              I'm Joel Sahli, a skilled software engineer based in the midst of Switzerland's
+              picturesque landscapes. With seven years of professional experience in the software
+              development industry, I specialize in web development, backend systems, and
+              scripting.
+            </p>
+          </div>
+          
+          <div>
+            <p class="text-gray-300 mb-6">
+              As a dedicated freelancer, I am committed to delivering high-quality solutions tailored
+              to your company's needs. My goal is to help businesses thrive in the digital landscape
+              by providing efficient and innovative software development services. I look
+              forward to the opportunity to contribute to your projects and bring your ideas to life.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Scroll indicator -->
+      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-20 bg-slate-800">
+    <div class="container mx-auto px-4">
+      <!-- Section Header -->
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold mb-4">Your Company in Focus</h2>
+        <p class="text-xl text-gray-300 mb-8">Customized Software Solutions of All Kinds</p>
+        <div class="w-24 h-1 bg-red-500 mx-auto"></div>
+      </div>
+      
+      <!-- Services Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <!-- Service 1: Websites -->
+        <div class="flex flex-col items-center text-center">
+          <div class="w-48 h-48 rounded-full overflow-hidden mb-6 border-4 border-blue-500/20">
+            <img src="assets/img/website.jpg" alt="Website Development" class="w-full h-full object-cover" 
+                 onerror="this.src='https://via.placeholder.com/200?text=Websites'">
+          </div>
+          <h3 class="text-2xl font-bold mb-3">Websites</h3>
+          <p class="text-gray-300">A professional online presence for your company</p>
+        </div>
+        
+        <!-- Service 2: Applications -->
+        <div class="flex flex-col items-center text-center">
+          <div class="w-48 h-48 rounded-full overflow-hidden mb-6 border-4 border-blue-500/20">
+            <img src="assets/img/app.jpg" alt="Application Development" class="w-full h-full object-cover"
+                 onerror="this.src='https://via.placeholder.com/200?text=Applications'">
+          </div>
+          <h3 class="text-2xl font-bold mb-3">Applications</h3>
+          <p class="text-gray-300">Elevate your business with custom native applications</p>
+        </div>
+        
+        <!-- Service 3: Scripts -->
+        <div class="flex flex-col items-center text-center">
+          <div class="w-48 h-48 rounded-full overflow-hidden mb-6 border-4 border-blue-500/20">
+            <img src="assets/img/script.jpg" alt="Script Development" class="w-full h-full object-cover"
+                 onerror="this.src='https://via.placeholder.com/200?text=Scripts'">
+          </div>
+          <h3 class="text-2xl font-bold mb-3">Scripts</h3>
+          <p class="text-gray-300">Increase your productivity with customized scripts</p>
+        </div>
+      </div>
+      
+      <!-- Contact Button -->
+      <div class="text-center mt-16">
+        <a href="#contact" class="inline-block px-8 py-3 border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white transition duration-300 rounded">
+          Contact me
+        </a>
+      </div>
+      
+      <!-- Scroll indicator -->
+      <div class="flex justify-center mt-16">
+        <div class="animate-bounce">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-20 bg-slate-900">
+    <div class="container mx-auto px-4">
+      <!-- Section Header -->
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold mb-4">Skills</h2>
+        <p class="text-xl text-gray-300 mb-8">The skills I've acquired so far</p>
+        <div class="w-24 h-1 bg-red-500 mx-auto"></div>
+      </div>
+      
+      <!-- Skills Categories -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        
+        <!-- Web Development -->
+        <div class="bg-slate-800/50 p-8 rounded-lg border border-slate-700">
+          <h3 class="text-2xl font-bold mb-6 text-blue-400">Web Development</h3>
+          <div class="flex flex-wrap gap-3">
+            <span class="px-4 py-2 bg-blue-500/20 border border-blue-400/30 rounded-full text-blue-300 hover:bg-blue-500/30 transition-all">HTML</span>
+            <span class="px-4 py-2 bg-blue-500/20 border border-blue-400/30 rounded-full text-blue-300 hover:bg-blue-500/30 transition-all">CSS</span>
+            <span class="px-4 py-2 bg-blue-500/20 border border-blue-400/30 rounded-full text-blue-300 hover:bg-blue-500/30 transition-all">JavaScript</span>
+            <span class="px-4 py-2 bg-blue-500/20 border border-blue-400/30 rounded-full text-blue-300 hover:bg-blue-500/30 transition-all">TypeScript</span>
+            <span class="px-4 py-2 bg-blue-500/20 border border-blue-400/30 rounded-full text-blue-300 hover:bg-blue-500/30 transition-all">Angular</span>
+            <span class="px-4 py-2 bg-blue-500/20 border border-blue-400/30 rounded-full text-blue-300 hover:bg-blue-500/30 transition-all">NPM</span>
+            <span class="px-4 py-2 bg-blue-500/20 border border-blue-400/30 rounded-full text-blue-300 hover:bg-blue-500/30 transition-all">Firebase</span>
+            <span class="px-4 py-2 bg-blue-500/20 border border-blue-400/30 rounded-full text-blue-300 hover:bg-blue-500/30 transition-all">Cypress</span>
+          </div>
+        </div>
+        
+        <!-- Backend Development -->
+        <div class="bg-slate-800/50 p-8 rounded-lg border border-slate-700">
+          <h3 class="text-2xl font-bold mb-6 text-blue-400">Backend Development</h3>
+          <div class="flex flex-wrap gap-3">
+            <span class="px-4 py-2 bg-blue-500/20 border border-blue-400/30 rounded-full text-blue-300 hover:bg-blue-500/30 transition-all">Java</span>
+            <span class="px-4 py-2 bg-blue-500/20 border border-blue-400/30 rounded-full text-blue-300 hover:bg-blue-500/30 transition-all">Spring</span>
+            <span class="px-4 py-2 bg-blue-500/20 border border-blue-400/30 rounded-full text-blue-300 hover:bg-blue-500/30 transition-all">Python</span>
+            <span class="px-4 py-2 bg-blue-500/20 border border-blue-400/30 rounded-full text-blue-300 hover:bg-blue-500/30 transition-all">FastAPI</span>
+            <span class="px-4 py-2 bg-blue-500/20 border border-blue-400/30 rounded-full text-blue-300 hover:bg-blue-500/30 transition-all">C#</span>
+            <span class="px-4 py-2 bg-blue-500/20 border border-blue-400/30 rounded-full text-blue-300 hover:bg-blue-500/30 transition-all">.Net</span>
+            <span class="px-4 py-2 bg-blue-500/20 border border-blue-400/30 rounded-full text-blue-300 hover:bg-blue-500/30 transition-all">MySQL</span>
+            <span class="px-4 py-2 bg-blue-500/20 border border-blue-400/30 rounded-full text-blue-300 hover:bg-blue-500/30 transition-all">MongoDB</span>
+          </div>
+        </div>
+        
+        <!-- DevOps Skills -->
+        <div class="bg-slate-800/50 p-8 rounded-lg border border-slate-700">
+          <h3 class="text-2xl font-bold mb-6 text-blue-400">DevOps Skills</h3>
+          <div class="flex flex-wrap gap-3">
+            <span class="px-4 py-2 bg-blue-500/20 border border-blue-400/30 rounded-full text-blue-300 hover:bg-blue-500/30 transition-all">Git</span>
+            <span class="px-4 py-2 bg-blue-500/20 border border-blue-400/30 rounded-full text-blue-300 hover:bg-blue-500/30 transition-all">Docker</span>
+            <span class="px-4 py-2 bg-blue-500/20 border border-blue-400/30 rounded-full text-blue-300 hover:bg-blue-500/30 transition-all">Kubernetes</span>
+            <span class="px-4 py-2 bg-blue-500/20 border border-blue-400/30 rounded-full text-blue-300 hover:bg-blue-500/30 transition-all">Jenkins</span>
+            <span class="px-4 py-2 bg-blue-500/20 border border-blue-400/30 rounded-full text-blue-300 hover:bg-blue-500/30 transition-all">Azure</span>
+            <span class="px-4 py-2 bg-blue-500/20 border border-blue-400/30 rounded-full text-blue-300 hover:bg-blue-500/30 transition-all">CI/CD</span>
+          </div>
+        </div>
+        
+        <!-- Agile Leadership Skills -->
+        <div class="bg-slate-800/50 p-8 rounded-lg border border-slate-700">
+          <h3 class="text-2xl font-bold mb-6 text-blue-400">Agile Leadership Skills</h3>
+          <div class="flex flex-wrap gap-3">
+            <span class="px-4 py-2 bg-blue-500/20 border border-blue-400/30 rounded-full text-blue-300 hover:bg-blue-500/30 transition-all">SAFe Framework</span>
+            <span class="px-4 py-2 bg-blue-500/20 border border-blue-400/30 rounded-full text-blue-300 hover:bg-blue-500/30 transition-all">Scrum</span>
+            <span class="px-4 py-2 bg-blue-500/20 border border-blue-400/30 rounded-full text-blue-300 hover:bg-blue-500/30 transition-all">Kanban</span>
+            <span class="px-4 py-2 bg-blue-500/20 border border-blue-400/30 rounded-full text-blue-300 hover:bg-blue-500/30 transition-all">Servant Leadership</span>
+            <span class="px-4 py-2 bg-blue-500/20 border border-blue-400/30 rounded-full text-blue-300 hover:bg-blue-500/30 transition-all">Facilitation</span>
+            <span class="px-4 py-2 bg-blue-500/20 border border-blue-400/30 rounded-full text-blue-300 hover:bg-blue-500/30 transition-all">Quality Assurance</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Scroll indicator -->
+      <div class="flex justify-center mt-16">
+        <div class="animate-bounce">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Career Timeline Section -->
+  <section id="career" class="py-20 bg-slate-800">
+    <div class="container mx-auto px-4">
+      <!-- Section Header -->
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold mb-4">My professional career</h2>
+        <div class="w-24 h-1 bg-red-500 mx-auto mt-8"></div>
+      </div>
+      
+      <!-- Timeline -->
+      <div class="relative">
+        <!-- Vertical Line -->
+        <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-blue-400/30"></div>
+        
+        <!-- Timeline Items -->
+        <div class="space-y-20">
+          <!-- Job 1: Current -->
+          <div class="relative">
+            <!-- Timeline Dot - Adjusted positioning -->
+            <div class="absolute left-1/2 transform -translate-x-1/2 top-6 w-5 h-5 rounded-full bg-red-500 border-4 border-slate-800 z-10"></div>
+            
+            <!-- Content with increased padding -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+              <!-- Left Side (Job Details) with more padding -->
+              <div class="md:text-right md:pr-8">
+                <h3 class="text-2xl font-bold text-red-400 mb-2">Fullstack Software Engineer</h3>
+                <p class="text-xl text-gray-300 mb-4">Infosoft Systems AG</p>
+                <div class="space-y-3 text-gray-400">
+                  <p>Further development of Android & iOS apps using Ionic</p>
+                  <p>Development of a documentation platform for the user manual</p>
+                  <p>Further development of C# and VB .Net applications</p>
+                </div>
+              </div>
+              
+              <!-- Right Side (Date) with more padding -->
+              <div class="md:pl-8">
+                <div class="inline-block px-4 py-2 bg-red-500 text-white rounded-full font-medium mb-4">
+                  2023 - Today
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Job 2 -->
+          <div class="relative">
+            <!-- Timeline Dot - Adjusted positioning -->
+            <div class="absolute left-1/2 transform -translate-x-1/2 top-6 w-5 h-5 rounded-full bg-blue-400 border-4 border-slate-800 z-10"></div>
+            
+            <!-- Content with increased padding -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+              <!-- Left Side (Date) with more padding -->
+              <div class="md:text-right md:pr-8">
+                <div class="inline-block px-4 py-2 bg-blue-500 text-white rounded-full font-medium mb-4">
+                  2022 - 2023
+                </div>
+              </div>
+              
+              <!-- Right Side (Job Details) with more padding -->
+              <div class="md:pl-8">
+                <h3 class="text-2xl font-bold text-blue-400 mb-2">Scrum Master</h3>
+                <p class="text-xl text-gray-300 mb-4">Swisscom Schweiz AG</p>
+                <div class="space-y-3 text-gray-400">
+                  <p>Lean agile leader of a team of 8 people distributed in Zürich, Riga and Rotterdam</p>
+                  <p>Building a community of practice for internal information exchange</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Job 3 -->
+          <div class="relative">
+            <!-- Timeline Dot - Adjusted positioning -->
+            <div class="absolute left-1/2 transform -translate-x-1/2 top-6 w-5 h-5 rounded-full bg-blue-400 border-4 border-slate-800 z-10"></div>
+            
+            <!-- Content with increased padding -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+              <!-- Left Side (Job Details) with more padding -->
+              <div class="md:text-right md:pr-8">
+                <h3 class="text-2xl font-bold text-blue-400 mb-2">DevOps Engineer</h3>
+                <p class="text-xl text-gray-300 mb-4">Swisscom Schweiz AG</p>
+                <div class="space-y-3 text-gray-400">
+                  <p>Introduced SRE principles to multiple teams</p>
+                  <p>Took over the role of Tech-Lead for an Application with an Angular Frontend and Python FastApi Backend</p>
+                </div>
+              </div>
+              
+              <!-- Right Side (Date) with more padding -->
+              <div class="md:pl-8">
+                <div class="inline-block px-4 py-2 bg-blue-500 text-white rounded-full font-medium mb-4">
+                  2021 - 2022
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Job 4 -->
+          <div class="relative">
+            <!-- Timeline Dot - Adjusted positioning -->
+            <div class="absolute left-1/2 transform -translate-x-1/2 top-6 w-5 h-5 rounded-full bg-blue-400 border-4 border-slate-800 z-10"></div>
+            
+            <!-- Content with increased padding -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+              <!-- Left Side (Date) with more padding -->
+              <div class="md:text-right md:pr-8">
+                <div class="inline-block px-4 py-2 bg-blue-500 text-white rounded-full font-medium mb-4">
+                  2020 - 2021
+                </div>
+              </div>
+              
+              <!-- Right Side (Job Details) with more padding -->
+              <div class="md:pl-8">
+                <h3 class="text-2xl font-bold text-blue-400 mb-2">Fullstack Engineer</h3>
+                <p class="text-xl text-gray-300 mb-4">Swisscom Schweiz AG</p>
+                <div class="space-y-3 text-gray-400">
+                  <p>Collaboration as software developer in an agile team</p>
+                  <p>Extended Frontend Controller with Java Spring Boot</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Job 5 -->
+          <div class="relative">
+            <!-- Timeline Dot - Adjusted positioning -->
+            <div class="absolute left-1/2 transform -translate-x-1/2 top-6 w-5 h-5 rounded-full bg-blue-400 border-4 border-slate-800 z-10"></div>
+            
+            <!-- Content with increased padding -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+              <!-- Left Side (Job Details) with more padding -->
+              <div class="md:text-right md:pr-8">
+                <h3 class="text-2xl font-bold text-blue-400 mb-2">Apprentice computer scientist application development</h3>
+                <p class="text-xl text-gray-300 mb-4">Swisscom AG</p>
+                <div class="space-y-3 text-gray-400">
+                  <p>First experience gained as a software developer</p>
+                  <p>Created an Angular Application as a final project</p>
+                </div>
+              </div>
+              
+              <!-- Right Side (Date) with more padding -->
+              <div class="md:pl-8">
+                <div class="inline-block px-4 py-2 bg-blue-500 text-white rounded-full font-medium mb-4">
+                  2016 - 2020
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Scroll indicator -->
+      <div class="flex justify-center mt-16">
+        <div class="animate-bounce">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+        </div>
+      </div>
     </div>
   </section>
 </body>
