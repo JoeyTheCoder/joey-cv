@@ -13,26 +13,35 @@
   <a href="#main-content" class="skip-to-main">Skip to main content</a>
 
   <!-- Navigation Bar - sticky with improved focus states -->
-  <nav class="fixed w-full bg-slate-900/90 backdrop-blur-sm z-50 border-b border-slate-800" role="navigation" aria-label="Main navigation">
-    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-      <a href="#" class="text-2xl font-bold hover:text-sapphire transition-colors duration-200" aria-label="Joel Sahli - Home">JS</a>
-      <div class="hidden md:flex space-x-8" role="list">
-        <a href="#about" class="hover:text-sapphire transition-colors duration-200 focus-visible:text-sapphire" role="listitem">About</a>
-        <a href="#services" class="hover:text-sapphire transition-colors duration-200 focus-visible:text-sapphire" role="listitem">Services</a>
-        <a href="#skills" class="hover:text-sapphire transition-colors duration-200 focus-visible:text-sapphire" role="listitem">Skills</a>
-        <a href="#career" class="hover:text-sapphire transition-colors duration-200 focus-visible:text-sapphire" role="listitem">Career</a>
-      </div>
-      <div class="flex space-x-4 items-center">
-        <!-- Contact CTA in navbar -->
-        <a href="mailto:contact@joelsahli.ch"
-           class="px-4 py-2 bg-sapphire hover:bg-sapphire-hover text-white rounded-md transition-all duration-200 font-medium"
-           aria-label="Contact Joel Sahli via email">
-          Contact
-        </a>
-        <!-- Language switcher -->
-        <div class="flex space-x-2 border-l border-slate-700 pl-4">
-          <button class="hover:text-sapphire transition-colors" aria-label="Switch to German">DE</button>
-          <button class="text-sapphire font-medium" aria-label="Current language: English" aria-current="true">EN</button>
+  <nav class="navbar fixed w-full z-50" role="navigation" aria-label="Main navigation">
+    <div class="nav-shell container mx-auto px-4">
+      <a href="#hero" class="nav-logo" aria-label="Joel Sahli - Home">
+        <span class="nav-logo-mark">JS</span>
+        <span class="nav-logo-meta">
+          <span class="nav-logo-name">Joel Sahli</span>
+        </span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <div class="nav-menu" id="primary-nav">
+        <div class="nav-links" role="list">
+          <a href="#about" role="listitem">About</a>
+          <a href="#services" role="listitem">Services</a>
+          <a href="#skills" role="listitem">Skills</a>
+          <a href="#career" role="listitem">Career</a>
+        </div>
+        <div class="nav-actions">
+          <a href="mailto:contact@joelsahli.ch" class="nav-contact" aria-label="Contact Joel Sahli via email">
+            Contact
+          </a>
+          <div class="nav-lang" role="group" aria-label="Language selector">
+            <button type="button">DE</button>
+            <button type="button" aria-current="true">EN</button>
+          </div>
         </div>
       </div>
     </div>
@@ -40,279 +49,358 @@
 
   <main id="main-content">
     <!-- Hero Section - modern layout with code snippet -->
-    <section class="min-h-screen flex items-center relative overflow-hidden pt-20" aria-labelledby="hero-heading">
+    <section id="hero" class="hero-section min-h-screen flex items-center relative overflow-hidden" aria-labelledby="hero-heading">
       <!-- Background pattern using sapphire gradient -->
       <div class="absolute inset-0 bg-slate-900" aria-hidden="true">
         <div class="absolute inset-0 opacity-10">
           <div class="absolute w-full h-full" style="background-image: linear-gradient(120deg, #0F52BA 0%, #0B46A0 100%);"></div>
-          <div class="absolute w-full h-full opacity-30"
-               style="background-image: url('data:image/svg+xml,%3Csvg width=%22100%22 height=%22100%22 viewBox=%220 0 100 100%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cpath d=%22M0 0h100v100H0z%22 fill=%22none%22/%3E%3Cpath d=%22M0 0l100 100M100 0L0 100%22 stroke=%22%23ffffff%22 stroke-width=%220.5%22/%3E%3C/svg%3E'); background-size: 50px 50px;">
-          </div>
+          <div class="hero-grid-pattern"></div>
         </div>
       </div>
 
-      <div class="container mx-auto px-4 z-10 flex flex-col md:flex-row items-center justify-between gap-8">
-        <div class="text-center md:text-left md:w-1/2 space-y-6">
+      <!-- Animated highlight blobs & spotlight (behind content) -->
+      <div class="absolute inset-0 pointer-events-none" aria-hidden="true" style="z-index: 1;">
+        <div class="hero-spotlight"></div>
+        <div class="hero-blob hero-blob-1"></div>
+        <div class="hero-blob hero-blob-2"></div>
+      </div>
+
+      <div class="hero-shell container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-8" style="position: relative; z-index: 10;">
+        <div class="hero-copy text-center md:text-left md:w-1/2 space-y-6">
           <h1 id="hero-heading" class="text-5xl md:text-7xl font-bold mb-4 tracking-tight">
             Joel Sahli
           </h1>
-          <p class="text-xl md:text-2xl text-slate-300 mb-6 font-medium">
-            Fullstack Software Engineer / DevOps Engineer / Agile Leader
+          <p class="hero-tagline text-xl md:text-2xl text-slate-300 mb-6 font-medium" aria-live="polite">
+            <span
+              class="typewriter-text"
+              data-typewriter-text="Fullstack Software Engineer / DevOps Engineer / Agile Leader Based in Switzerland 🇨🇭"
+              data-typewriter-duration="4200"
+              data-typewriter-delay="250"
+              data-typewriter-steps="78">
+              Fullstack Software Engineer / DevOps Engineer / Agile Leader Based in Switzerland 🇨🇭
+            </span>
           </p>
-          <p class="text-lg text-slate-400 mb-8">Based in Switzerland 🇨🇭</p>
-
-          <!-- Inline code snippet showing developer personality -->
-          <div class="inline-block bg-slate-800/50 backdrop-blur-sm border border-sapphire-border rounded-lg p-4 mb-8">
-            <code class="font-mono text-sapphire text-sm md:text-base">
-              <span class="text-purple-400">const</span> <span class="text-blue-300">site</span> = <span class="text-green-400">'reborn'</span>;
-            </code>
-          </div>
 
           <!-- Primary CTAs -->
-          <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+          <div class="hero-cta-group flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
             <a href="#services"
-               class="px-8 py-3 bg-sapphire hover:bg-sapphire-hover text-white rounded-lg transition-all duration-200 font-semibold shadow-lg shadow-sapphire/20 hover:shadow-sapphire/40 hover:-translate-y-0.5 transform"
+               class="hero-cta hero-cta-primary"
                aria-label="View services">
               View Services
             </a>
             <a href="mailto:contact@joelsahli.ch"
-               class="px-8 py-3 border-2 border-sapphire text-sapphire hover:bg-sapphire hover:text-white transition-all duration-200 rounded-lg font-semibold"
+               class="hero-cta hero-cta-secondary"
                aria-label="Get in touch">
               Get in Touch
             </a>
           </div>
         </div>
 
-        <!-- Profile image -->
-        <div class="md:w-1/2 flex justify-center md:justify-end">
-          <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-sapphire/30 shadow-xl shadow-sapphire/20">
-            <img src="assets/img/joel-cv.jpeg"
-                 alt="Portrait of Joel Sahli, Fullstack Software Engineer"
-                 class="w-full h-full object-cover"
-                 loading="eager"
-                 onerror="this.src='https://via.placeholder.com/400?text=Profile+Image'">
+        <!-- Profile image with animated rings backdrop -->
+        <div class="hero-portrait md:w-1/2 flex justify-center md:justify-end">
+          <div class="relative">
+            <!-- Animated gradient rings behind profile -->
+            <div class="absolute inset-0 flex items-center justify-center" aria-hidden="true">
+              <div class="profile-ring profile-ring-1"></div>
+              <div class="profile-ring profile-ring-2"></div>
+              <div class="profile-ring profile-ring-3"></div>
+            </div>
+            
+            <!-- Profile picture (relative z-index to sit above rings) -->
+            <div class="hero-avatar relative z-10 rounded-full overflow-hidden border-4 border-sapphire/30 shadow-xl shadow-sapphire/20">
+              <img src="assets/img/joel-cv.jpeg"
+                   alt="Portrait of Joel Sahli, Fullstack Software Engineer"
+                   class="w-full h-full object-cover"
+                   loading="eager"
+                   onerror="this.src='https://via.placeholder.com/400?text=Profile+Image'">
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Scroll indicator with accessibility -->
-      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce" aria-hidden="true">
+      <button class="scroll-arrow absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce bg-transparent border-0 cursor-pointer p-2 hover:scale-110 transition-transform focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sapphire/50 rounded-full" aria-label="Scroll to about section" data-scroll-to="about">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-sapphire" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
         </svg>
-      </div>
+      </button>
     </section>
 
     <!-- Swiss Landscape Showcase Section - full-bleed with picture element and accessible overlay -->
-    <section id="about" class="py-0 relative min-h-screen" aria-labelledby="about-heading">
-      <!-- Responsive Swiss mountain background with srcset for performance -->
-      <!-- Replace with high-res assets: assets/swiss-highres.jpg (1920w), assets/swiss-medium.jpg (1280w), assets/swiss-small.jpg (768w) -->
-      <picture class="absolute inset-0">
-        <!-- Future optimization: add multiple sources for different screen sizes -->
-        <!-- <source media="(min-width: 1920px)" srcset="assets/img/swiss-highres.jpg"> -->
-        <!-- <source media="(min-width: 1280px)" srcset="assets/img/swiss-medium.jpg"> -->
-        <!-- <source media="(min-width: 768px)" srcset="assets/img/swiss-small.jpg"> -->
+    <section id="about" class="about-section" aria-labelledby="about-heading">
+      <picture class="about-media" aria-hidden="true">
         <img
           src="assets/img/churfirsten-big.jpg"
           alt="Panoramic view of the Swiss Churfirsten mountain range"
-          class="w-full h-full object-cover object-center"
+          class="about-media-image"
           loading="lazy"
-          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
         />
-        <!-- Accessible overlay gradient to preserve text legibility over busy background image -->
-        <div class="absolute inset-0 bg-gradient-to-b from-sapphire/12 via-slate-900/60 to-slate-900/95" aria-hidden="true"></div>
       </picture>
+      <div class="about-overlay" aria-hidden="true"></div>
 
-      <!-- Content Container - positioned in bottom half with glass morphism effect -->
-      <div class="absolute bottom-0 left-0 right-0 min-h-[50vh] bg-slate-900/70 backdrop-blur-md z-10 border-t border-slate-700/50">
-        <!-- Sapphire accent line separator at the top of content area -->
-        <div class="w-full h-1 bg-gradient-to-r from-sapphire via-sapphire-light to-sapphire" aria-hidden="true"></div>
+      <div class="about-surface">
+        <div class="about-divider" aria-hidden="true"></div>
 
-        <div class="container mx-auto px-4 py-16">
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-            <div>
-              <h2 id="about-heading" class="text-4xl md:text-5xl font-bold mb-6">About me</h2>
-              <h3 class="text-2xl text-slate-300 mb-4 font-medium">A Software Engineer from Switzerland</h3>
-            </div>
+        <div class="about-content container mx-auto px-4 py-16">
+          <div class="about-grid">
+            <article class="about-panel about-panel-lead" aria-labelledby="about-heading">
+              <h2 id="about-heading" class="text-4xl md:text-5xl font-bold" style="padding-bottom: 10px;">About me</h2>
+              <p class="about-lead text-2xl text-slate-200">Swiss-born engineer translating complex challenges into elegant, human-friendly software.</p>
+              <p class="about-paragraph text-slate-300">I collaborate with product teams across Europe to ship delightful user experiences, production-ready code, and DevOps automation that scales with your ambitions.</p>
 
-            <div>
-              <p class="text-slate-300 leading-relaxed">
-                I'm Joel Sahli, a skilled software engineer based in the midst of Switzerland's
-                picturesque landscapes. With seven years of professional experience in the software
-                development industry, I specialize in web development, backend systems, and
-                scripting.
-              </p>
-            </div>
+              <div class="about-meta" role="list" aria-label="Experience highlights">
+                <div class="about-meta-card" role="listitem">
+                  <p class="about-meta-value">7+</p>
+                  <p class="about-meta-label">Years building products</p>
+                </div>
+                <div class="about-meta-card" role="listitem">
+                  <p class="about-meta-value">30+</p>
+                  <p class="about-meta-label">Projects shipped</p>
+                </div>
+                <div class="about-meta-card" role="listitem">
+                  <p class="about-meta-value">3</p>
+                  <p class="about-meta-label">Leadership roles</p>
+                </div>
+              </div>
+            </article>
 
-            <div>
-              <p class="text-slate-300 leading-relaxed">
-                As a dedicated freelancer, I am committed to delivering high-quality solutions tailored
-                to your company's needs. My goal is to help businesses thrive in the digital landscape
-                by providing efficient and innovative software development services. I look
-                forward to the opportunity to contribute to your projects and bring your ideas to life.
-              </p>
-            </div>
+            <article class="about-panel" aria-label="How I help teams">
+              <h3 class="about-subheading">How I help teams</h3>
+              <p class="about-paragraph">From rapid prototypes to regulated enterprise systems, I bridge architecture, delivery, and mentoring so teams can move with confidence.</p>
+              <ul class="about-list">
+                <li><span aria-hidden="true">▹</span>Design resilient frontends (Angular, Vite, Tailwind) that stay lightweight.</li>
+                <li><span aria-hidden="true">▹</span>Build cloud-ready APIs and integrations powered by Java, .NET, and Python.</li>
+                <li><span aria-hidden="true">▹</span>Automate release pipelines with IaC, Kubernetes, and Azure DevOps.</li>
+              </ul>
+            </article>
+
+            <article class="about-panel" aria-label="Ways of working">
+              <h3 class="about-subheading">Ways of working</h3>
+              <p class="about-paragraph">I create calm, outcome-focused delivery rhythms—facilitating standups in the morning, reviewing pull requests at lunch, and pairing with engineers in the afternoon.</p>
+              <div class="about-tags" role="list">
+                <span class="about-tag" role="listitem">Agile leadership</span>
+                <span class="about-tag" role="listitem">Servant coaching</span>
+                <span class="about-tag" role="listitem">Continuous discovery</span>
+                <span class="about-tag" role="listitem">Quality-first mindset</span>
+              </div>
+              <p class="about-paragraph text-slate-300 font-medium">Let’s align on your roadmap and build a delivery plan that your stakeholders can trust.</p>
+            </article>
           </div>
         </div>
 
-        <!-- Scroll indicator -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce" aria-hidden="true">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-sapphire" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
+        <div class="about-scroll">
+          <button class="scroll-arrow animate-bounce bg-transparent border-0 cursor-pointer p-2 hover:scale-110 transition-transform focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sapphire/50 rounded-full" aria-label="Scroll to services section" data-scroll-to="services">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-sapphire" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </button>
         </div>
       </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-20 bg-slate-800" aria-labelledby="services-heading">
+    <section id="services" class="services-section py-20 bg-slate-800" aria-labelledby="services-heading">
       <div class="container mx-auto px-4">
         <!-- Section Header -->
-        <div class="text-center mb-16">
-          <h2 id="services-heading" class="text-4xl md:text-5xl font-bold mb-4">Your Company in Focus</h2>
-          <p class="text-xl text-slate-300 mb-8">Customized Software Solutions of All Kinds</p>
-          <div class="w-24 h-1 bg-sapphire mx-auto rounded-full" aria-hidden="true"></div>
+        <div class="services-header text-center mb-16">
+          <p class="section-kicker">HOW WE CAN PARTNER</p>
+          <h2 id="services-heading" class="text-4xl md:text-5xl font-bold mb-4">Your company in focus</h2>
+          <p class="text-xl text-slate-300">Select the collaboration mode that meets your runway, product maturity, and delivery cadence.</p>
         </div>
 
-        <!-- Services Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-          <!-- Service 1: Websites -->
-          <article class="flex flex-col items-center text-center group">
-            <div class="w-48 h-48 rounded-full overflow-hidden mb-6 border-4 border-sapphire/20 group-hover:border-sapphire/40 transition-all duration-300 shadow-lg group-hover:shadow-sapphire/30">
-              <img src="assets/img/website.jpg"
-                   alt="Modern website interface design"
-                   class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                   loading="lazy"
-                   onerror="this.src='https://via.placeholder.com/200?text=Websites'">
+        <div class="services-grid">
+          <article class="service-card" aria-label="Web platforms">
+            <div class="service-card-head">
+              <span class="service-icon" aria-hidden="true">🌐</span>
+              <div>
+                <h3>Web Platforms</h3>
+                <p class="service-tagline">Sites · systems · automation</p>
+              </div>
             </div>
-            <h3 class="text-2xl font-bold mb-3">Websites</h3>
-            <p class="text-slate-300">A professional online presence for your company</p>
+            <ul class="service-deliverables">
+              <li>Marketing sites wired for analytics and localization.</li>
+              <li>Design systems reusable across React, Angular, Web Components.</li>
+              <li>Vite/Tailwind builds tuned for Core Web Vitals.</li>
+            </ul>
+            <div class="service-meta">
+              <span class="service-badge">2–6 week sprints</span>
+              <span class="service-stack">Astro · Angular · Headless CMS</span>
+            </div>
           </article>
 
-          <!-- Service 2: Applications -->
-          <article class="flex flex-col items-center text-center group">
-            <div class="w-48 h-48 rounded-full overflow-hidden mb-6 border-4 border-sapphire/20 group-hover:border-sapphire/40 transition-all duration-300 shadow-lg group-hover:shadow-sapphire/30">
-              <img src="assets/img/app.jpg"
-                   alt="Mobile and desktop application development"
-                   class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                   loading="lazy"
-                   onerror="this.src='https://via.placeholder.com/200?text=Applications'">
+          <article class="service-card" aria-label="Product applications">
+            <div class="service-card-head">
+              <span class="service-icon" aria-hidden="true">📱</span>
+              <div>
+                <h3>Product Applications</h3>
+                <p class="service-tagline">Portals · workflows · APIs</p>
+              </div>
             </div>
-            <h3 class="text-2xl font-bold mb-3">Applications</h3>
-            <p class="text-slate-300">Elevate your business with custom native applications</p>
+            <ul class="service-deliverables">
+              <li>Modular monorepos that span web, mobile, and desktop.</li>
+              <li>Observable backend services with clean contracts.</li>
+              <li>CI/CD pipelines featuring preview environments and QA gates.</li>
+            </ul>
+            <div class="service-meta">
+              <span class="service-badge">Fractional team lead</span>
+              <span class="service-stack">.NET · Java · FastAPI · Azure</span>
+            </div>
           </article>
 
-          <!-- Service 3: Scripts -->
-          <article class="flex flex-col items-center text-center group">
-            <div class="w-48 h-48 rounded-full overflow-hidden mb-6 border-4 border-sapphire/20 group-hover:border-sapphire/40 transition-all duration-300 shadow-lg group-hover:shadow-sapphire/30">
-              <img src="assets/img/script.jpg"
-                   alt="Automation scripting and development tools"
-                   class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                   loading="lazy"
-                   onerror="this.src='https://via.placeholder.com/200?text=Scripts'">
+          <article class="service-card" aria-label="Automation and operations">
+            <div class="service-card-head">
+              <span class="service-icon" aria-hidden="true">⚙️</span>
+              <div>
+                <h3>Automation & Ops</h3>
+                <p class="service-tagline">DevOps · FinOps · reliability</p>
+              </div>
             </div>
-            <h3 class="text-2xl font-bold mb-3">Scripts</h3>
-            <p class="text-slate-300">Increase your productivity with customized scripts</p>
+            <ul class="service-deliverables">
+              <li>Kubernetes, Terraform, and GitHub Actions starter kits.</li>
+              <li>Dashboards with live SLOs and clear error budgets.</li>
+              <li>Enablement playbooks and confident on-call rituals.</li>
+            </ul>
+            <div class="service-meta">
+              <span class="service-badge">Retainer & advisory</span>
+              <span class="service-stack">Kubernetes · Terraform · Grafana</span>
+            </div>
           </article>
         </div>
 
-        <!-- Contact Button -->
-        <div class="text-center mt-16">
-          <a href="mailto:contact@joelsahli.ch"
-             class="inline-block px-8 py-3 border-2 border-sapphire text-sapphire hover:bg-sapphire hover:text-white transition-all duration-300 rounded-lg font-semibold shadow-lg hover:shadow-sapphire/40 hover:-translate-y-0.5 transform"
-             aria-label="Contact Joel for services">
-            Contact me
+        <div class="services-footer">
+          <div>
+            <p class="services-footer-kicker">Need something custom?</p>
+            <p class="text-slate-300">Send over your deck or backlog—we'll co-create a plan within 48 hours.</p>
+          </div>
+          <a href="mailto:contact@joelsahli.ch" class="services-footer-cta" aria-label="Contact Joel for services">
+            Schedule a call
           </a>
         </div>
 
         <!-- Scroll indicator -->
-        <div class="flex justify-center mt-16" aria-hidden="true">
-          <div class="animate-bounce">
+        <div class="flex justify-center mt-16">
+          <button class="scroll-arrow animate-bounce bg-transparent border-0 cursor-pointer p-2 hover:scale-110 transition-transform focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sapphire/50 rounded-full" aria-label="Scroll to skills section" data-scroll-to="skills">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-sapphire" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
             </svg>
-          </div>
+          </button>
         </div>
       </div>
     </section>
 
-    <!-- Skills Section with monospace tech badges -->
+    <!-- Skills Section with modern visual grouping -->
     <section id="skills" class="py-20 bg-slate-900" aria-labelledby="skills-heading">
       <div class="container mx-auto px-4">
         <!-- Section Header -->
         <div class="text-center mb-16">
-          <h2 id="skills-heading" class="text-4xl md:text-5xl font-bold mb-4">Skills</h2>
-          <p class="text-xl text-slate-300 mb-8">The skills I've acquired so far</p>
-          <div class="w-24 h-1 bg-sapphire mx-auto rounded-full" aria-hidden="true"></div>
+          <h2 id="skills-heading" class="text-4xl md:text-5xl font-bold mb-4">Skills & Technologies</h2>
+          <p class="text-xl text-slate-300 mb-8">Tools and technologies I work with daily</p>
+          <div class="w-24 h-1 bg-gradient-to-r from-sapphire to-red-500 mx-auto rounded-full" aria-hidden="true"></div>
         </div>
 
-        <!-- Skills Categories -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-
-          <!-- Web Development -->
-          <article class="bg-slate-800/50 p-8 rounded-lg border border-slate-700 hover:border-sapphire/50 transition-all duration-300">
-            <h3 class="text-2xl font-bold mb-6 text-sapphire">Web Development</h3>
-            <div class="flex flex-wrap gap-3" role="list" aria-label="Web development technologies">
-              <span class="tech-badge px-4 py-2 bg-sapphire/10 border border-sapphire/30 rounded-md text-sapphire hover:bg-sapphire/20 transition-all font-mono text-sm" role="listitem">HTML</span>
-              <span class="tech-badge px-4 py-2 bg-sapphire/10 border border-sapphire/30 rounded-md text-sapphire hover:bg-sapphire/20 transition-all font-mono text-sm" role="listitem">CSS</span>
-              <span class="tech-badge px-4 py-2 bg-sapphire/10 border border-sapphire/30 rounded-md text-sapphire hover:bg-sapphire/20 transition-all font-mono text-sm" role="listitem">JavaScript</span>
-              <span class="tech-badge px-4 py-2 bg-sapphire/10 border border-sapphire/30 rounded-md text-sapphire hover:bg-sapphire/20 transition-all font-mono text-sm" role="listitem">TypeScript</span>
-              <span class="tech-badge px-4 py-2 bg-sapphire/10 border border-sapphire/30 rounded-md text-sapphire hover:bg-sapphire/20 transition-all font-mono text-sm" role="listitem">Angular</span>
-              <span class="tech-badge px-4 py-2 bg-sapphire/10 border border-sapphire/30 rounded-md text-sapphire hover:bg-sapphire/20 transition-all font-mono text-sm" role="listitem">NPM</span>
-              <span class="tech-badge px-4 py-2 bg-sapphire/10 border border-sapphire/30 rounded-md text-sapphire hover:bg-sapphire/20 transition-all font-mono text-sm" role="listitem">Firebase</span>
-              <span class="tech-badge px-4 py-2 bg-sapphire/10 border border-sapphire/30 rounded-md text-sapphire hover:bg-sapphire/20 transition-all font-mono text-sm" role="listitem">Cypress</span>
+        <div class="skills-grid" role="list">
+          <article class="skills-card tone-frontend" role="listitem">
+            <div class="skills-card-header">
+              <div class="skills-card-icon" aria-hidden="true">🎨</div>
+              <div>
+                <h3 class="skills-card-title">Frontend Development</h3>
+                <p class="skills-card-meta">Design systems • Accessibility • High-performance SPAs</p>
+              </div>
+            </div>
+            <div class="skills-chip-group" aria-label="Frontend technologies">
+              <span class="skills-chip">HTML5</span>
+              <span class="skills-chip">TypeScript</span>
+              <span class="skills-chip">Angular</span>
+              <span class="skills-chip">Tailwind</span>
+              <span class="skills-chip">Vite</span>
+              <span class="skills-chip">Storybook</span>
+            </div>
+            <div class="skills-spotlights" aria-label="Frontend spotlights">
+              <span>Design systems</span>
+              <span>Accessibility QA</span>
+              <span>Storybook reviews</span>
             </div>
           </article>
 
-          <!-- Backend Development -->
-          <article class="bg-slate-800/50 p-8 rounded-lg border border-slate-700 hover:border-sapphire/50 transition-all duration-300">
-            <h3 class="text-2xl font-bold mb-6 text-sapphire">Backend Development</h3>
-            <div class="flex flex-wrap gap-3" role="list" aria-label="Backend development technologies">
-              <span class="tech-badge px-4 py-2 bg-sapphire/10 border border-sapphire/30 rounded-md text-sapphire hover:bg-sapphire/20 transition-all font-mono text-sm" role="listitem">Java</span>
-              <span class="tech-badge px-4 py-2 bg-sapphire/10 border border-sapphire/30 rounded-md text-sapphire hover:bg-sapphire/20 transition-all font-mono text-sm" role="listitem">Spring</span>
-              <span class="tech-badge px-4 py-2 bg-sapphire/10 border border-sapphire/30 rounded-md text-sapphire hover:bg-sapphire/20 transition-all font-mono text-sm" role="listitem">Python</span>
-              <span class="tech-badge px-4 py-2 bg-sapphire/10 border border-sapphire/30 rounded-md text-sapphire hover:bg-sapphire/20 transition-all font-mono text-sm" role="listitem">FastAPI</span>
-              <span class="tech-badge px-4 py-2 bg-sapphire/10 border border-sapphire/30 rounded-md text-sapphire hover:bg-sapphire/20 transition-all font-mono text-sm" role="listitem">C#</span>
-              <span class="tech-badge px-4 py-2 bg-sapphire/10 border border-sapphire/30 rounded-md text-sapphire hover:bg-sapphire/20 transition-all font-mono text-sm" role="listitem">.Net</span>
-              <span class="tech-badge px-4 py-2 bg-sapphire/10 border border-sapphire/30 rounded-md text-sapphire hover:bg-sapphire/20 transition-all font-mono text-sm" role="listitem">MySQL</span>
-              <span class="tech-badge px-4 py-2 bg-sapphire/10 border border-sapphire/30 rounded-md text-sapphire hover:bg-sapphire/20 transition-all font-mono text-sm" role="listitem">MongoDB</span>
+          <article class="skills-card tone-backend" role="listitem">
+            <div class="skills-card-header">
+              <div class="skills-card-icon" aria-hidden="true">⚙️</div>
+              <div>
+                <h3 class="skills-card-title">Backend & APIs</h3>
+                <p class="skills-card-meta">Cloud-native services • Secure integrations</p>
+              </div>
+            </div>
+            <div class="skills-chip-group" aria-label="Backend technologies">
+              <span class="skills-chip">Java</span>
+              <span class="skills-chip">Spring Boot</span>
+              <span class="skills-chip">.NET</span>
+              <span class="skills-chip">Python</span>
+              <span class="skills-chip">FastAPI</span>
+              <span class="skills-chip">PostgreSQL</span>
+              <span class="skills-chip">MongoDB</span>
+            </div>
+            <div class="skills-spotlights" aria-label="Backend spotlights">
+              <span>Event-driven APIs</span>
+              <span>Secure delivery</span>
+              <span>Data modeling</span>
             </div>
           </article>
 
-          <!-- DevOps Skills -->
-          <article class="bg-slate-800/50 p-8 rounded-lg border border-slate-700 hover:border-sapphire/50 transition-all duration-300">
-            <h3 class="text-2xl font-bold mb-6 text-sapphire">DevOps Skills</h3>
-            <div class="flex flex-wrap gap-3" role="list" aria-label="DevOps technologies">
-              <span class="tech-badge px-4 py-2 bg-sapphire/10 border border-sapphire/30 rounded-md text-sapphire hover:bg-sapphire/20 transition-all font-mono text-sm" role="listitem">Git</span>
-              <span class="tech-badge px-4 py-2 bg-sapphire/10 border border-sapphire/30 rounded-md text-sapphire hover:bg-sapphire/20 transition-all font-mono text-sm" role="listitem">Docker</span>
-              <span class="tech-badge px-4 py-2 bg-sapphire/10 border border-sapphire/30 rounded-md text-sapphire hover:bg-sapphire/20 transition-all font-mono text-sm" role="listitem">Kubernetes</span>
-              <span class="tech-badge px-4 py-2 bg-sapphire/10 border border-sapphire/30 rounded-md text-sapphire hover:bg-sapphire/20 transition-all font-mono text-sm" role="listitem">Jenkins</span>
-              <span class="tech-badge px-4 py-2 bg-sapphire/10 border border-sapphire/30 rounded-md text-sapphire hover:bg-sapphire/20 transition-all font-mono text-sm" role="listitem">Azure</span>
-              <span class="tech-badge px-4 py-2 bg-sapphire/10 border border-sapphire/30 rounded-md text-sapphire hover:bg-sapphire/20 transition-all font-mono text-sm" role="listitem">CI/CD</span>
+          <article class="skills-card tone-devops" role="listitem">
+            <div class="skills-card-header">
+              <div class="skills-card-icon" aria-hidden="true">🚀</div>
+              <div>
+                <h3 class="skills-card-title">DevOps & Cloud</h3>
+                <p class="skills-card-meta">Automation • Observability • Secure delivery</p>
+              </div>
+            </div>
+            <div class="skills-chip-group" aria-label="DevOps technologies">
+              <span class="skills-chip">Docker</span>
+              <span class="skills-chip">Kubernetes</span>
+              <span class="skills-chip">Azure</span>
+              <span class="skills-chip">GitHub Actions</span>
+              <span class="skills-chip">Terraform</span>
+              <span class="skills-chip">CI/CD</span>
+            </div>
+            <div class="skills-spotlights" aria-label="DevOps spotlights">
+              <span>Release automation</span>
+              <span>Observability</span>
+              <span>Cloud governance</span>
             </div>
           </article>
 
-          <!-- Agile Leadership Skills -->
-          <article class="bg-slate-800/50 p-8 rounded-lg border border-slate-700 hover:border-sapphire/50 transition-all duration-300">
-            <h3 class="text-2xl font-bold mb-6 text-sapphire">Agile Leadership Skills</h3>
-            <div class="flex flex-wrap gap-3" role="list" aria-label="Agile leadership skills">
-              <span class="tech-badge px-4 py-2 bg-sapphire/10 border border-sapphire/30 rounded-md text-sapphire hover:bg-sapphire/20 transition-all font-mono text-sm" role="listitem">SAFe Framework</span>
-              <span class="tech-badge px-4 py-2 bg-sapphire/10 border border-sapphire/30 rounded-md text-sapphire hover:bg-sapphire/20 transition-all font-mono text-sm" role="listitem">Scrum</span>
-              <span class="tech-badge px-4 py-2 bg-sapphire/10 border border-sapphire/30 rounded-md text-sapphire hover:bg-sapphire/20 transition-all font-mono text-sm" role="listitem">Kanban</span>
-              <span class="tech-badge px-4 py-2 bg-sapphire/10 border border-sapphire/30 rounded-md text-sapphire hover:bg-sapphire/20 transition-all font-mono text-sm" role="listitem">Servant Leadership</span>
-              <span class="tech-badge px-4 py-2 bg-sapphire/10 border border-sapphire/30 rounded-md text-sapphire hover:bg-sapphire/20 transition-all font-mono text-sm" role="listitem">Facilitation</span>
-              <span class="tech-badge px-4 py-2 bg-sapphire/10 border border-sapphire/30 rounded-md text-sapphire hover:bg-sapphire/20 transition-all font-mono text-sm" role="listitem">Quality Assurance</span>
+          <article class="skills-card tone-leadership" role="listitem">
+            <div class="skills-card-header">
+              <div class="skills-card-icon" aria-hidden="true">👥</div>
+              <div>
+                <h3 class="skills-card-title">Tools & Leadership</h3>
+                <p class="skills-card-meta">Facilitation • Coaching • Quality culture</p>
+              </div>
+            </div>
+            <div class="skills-chip-group" aria-label="Leadership tools">
+              <span class="skills-chip">Scrum</span>
+              <span class="skills-chip">SAFe</span>
+              <span class="skills-chip">Kanban</span>
+              <span class="skills-chip">Miro</span>
+              <span class="skills-chip">Jira</span>
+              <span class="skills-chip">Cypress</span>
+              <span class="skills-chip">Git</span>
+            </div>
+            <div class="skills-spotlights" aria-label="Leadership spotlights">
+              <span>Team facilitation</span>
+              <span>Mentorship</span>
+              <span>Agile coaching</span>
             </div>
           </article>
         </div>
 
         <!-- Scroll indicator -->
-        <div class="flex justify-center mt-16" aria-hidden="true">
-          <div class="animate-bounce">
+        <div class="flex justify-center mt-16">
+          <button class="scroll-arrow animate-bounce bg-transparent border-0 cursor-pointer p-2 hover:scale-110 transition-transform focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sapphire/50 rounded-full" aria-label="Scroll to career section" data-scroll-to="career">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-sapphire" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
             </svg>
-          </div>
+          </button>
         </div>
       </div>
     </section>
@@ -327,136 +415,122 @@
         </div>
 
         <!-- Timeline -->
-        <div class="relative" role="list" aria-label="Career timeline">
-          <!-- Vertical Line with sapphire color -->
-          <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-sapphire/30" aria-hidden="true"></div>
-
-          <!-- Timeline Items -->
-          <div class="space-y-20">
-            <!-- Job 1: Current -->
-            <article class="relative" role="listitem">
-              <!-- Timeline Dot - using accent red for current position -->
-              <div class="absolute left-1/2 transform -translate-x-1/2 top-6 w-5 h-5 rounded-full bg-red-500 border-4 border-slate-800 z-10" aria-hidden="true"></div>
-
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-                <div class="md:text-right md:pr-8">
-                  <h3 class="text-2xl font-bold text-red-400 mb-2">Fullstack Software Engineer</h3>
-                  <p class="text-xl text-slate-300 mb-4 font-medium">Infosoft Systems AG</p>
-                  <ul class="space-y-3 text-slate-400 text-left md:text-right">
-                    <li>Further development of Android & iOS apps using Ionic</li>
-                    <li>Development of a documentation platform for the user manual</li>
-                    <li>Further development of C# and VB .Net applications</li>
-                  </ul>
+        <div class="timeline-wrapper" aria-label="Career timeline">
+          <div class="timeline-track" aria-hidden="true"></div>
+          <ol class="timeline-list" role="list">
+            <li class="timeline-item" role="listitem">
+              <div class="timeline-node" aria-hidden="true"></div>
+              <article class="timeline-card">
+                <div class="timeline-meta">
+                  <span class="timeline-date">2023 — Today</span>
+                  <span class="timeline-location">Infosoft Systems AG</span>
                 </div>
+                <h3 class="timeline-title">Fullstack Software Engineer</h3>
+                <ul class="timeline-points">
+                  <li>Extended Ionic mobile apps and rolled out an offline-first document platform.</li>
+                  <li>Modernized legacy .NET services and APIs without interrupting production traffic.</li>
+                  <li>Introduced automated release gates and code quality dashboards.</li>
+                </ul>
+              </article>
+            </li>
 
-                <div class="md:pl-8">
-                  <time class="inline-block px-4 py-2 bg-red-500 text-white rounded-full font-medium mb-4" datetime="2023">
-                    2023 - Today
-                  </time>
+            <li class="timeline-item" role="listitem">
+              <div class="timeline-node" aria-hidden="true"></div>
+              <article class="timeline-card">
+                <div class="timeline-meta">
+                  <span class="timeline-date">2022 — 2023</span>
+                  <span class="timeline-location">Swisscom Schweiz AG</span>
                 </div>
-              </div>
-            </article>
+                <h3 class="timeline-title">Scrum Master</h3>
+                <ul class="timeline-points">
+                  <li>Facilitated a distributed team of eight across Zürich, Riga, and Rotterdam.</li>
+                  <li>Launched a community of practice to share learnings between teams.</li>
+                  <li>Tracked delivery health with lean metrics and calm stakeholder comms.</li>
+                </ul>
+              </article>
+            </li>
 
-            <!-- Job 2 -->
-            <article class="relative" role="listitem">
-              <div class="absolute left-1/2 transform -translate-x-1/2 top-6 w-5 h-5 rounded-full bg-sapphire border-4 border-slate-800 z-10" aria-hidden="true"></div>
-
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-                <div class="md:text-right md:pr-8">
-                  <time class="inline-block px-4 py-2 bg-sapphire text-white rounded-full font-medium mb-4" datetime="2022">
-                    2022 - 2023
-                  </time>
+            <li class="timeline-item" role="listitem">
+              <div class="timeline-node" aria-hidden="true"></div>
+              <article class="timeline-card">
+                <div class="timeline-meta">
+                  <span class="timeline-date">2021 — 2022</span>
+                  <span class="timeline-location">Swisscom Schweiz AG</span>
                 </div>
+                <h3 class="timeline-title">DevOps Engineer</h3>
+                <ul class="timeline-points">
+                  <li>Embedded SRE guidelines into multiple product teams.</li>
+                  <li>Acted as Tech Lead for an Angular + FastAPI customer platform.</li>
+                  <li>Implemented blue/green deployments with observability guardrails.</li>
+                </ul>
+              </article>
+            </li>
 
-                <div class="md:pl-8">
-                  <h3 class="text-2xl font-bold text-sapphire mb-2">Scrum Master</h3>
-                  <p class="text-xl text-slate-300 mb-4 font-medium">Swisscom Schweiz AG</p>
-                  <ul class="space-y-3 text-slate-400">
-                    <li>Lean agile leader of a team of 8 people distributed in Zürich, Riga and Rotterdam</li>
-                    <li>Building a community of practice for internal information exchange</li>
-                  </ul>
+            <li class="timeline-item" role="listitem">
+              <div class="timeline-node" aria-hidden="true"></div>
+              <article class="timeline-card">
+                <div class="timeline-meta">
+                  <span class="timeline-date">2020 — 2021</span>
+                  <span class="timeline-location">Swisscom Schweiz AG</span>
                 </div>
-              </div>
-            </article>
+                <h3 class="timeline-title">Fullstack Engineer</h3>
+                <ul class="timeline-points">
+                  <li>Built customer-facing features with Java Spring Boot + Angular.</li>
+                  <li>Improved CI pipelines and pair-programmed with junior engineers.</li>
+                </ul>
+              </article>
+            </li>
 
-            <!-- Job 3 -->
-            <article class="relative" role="listitem">
-              <div class="absolute left-1/2 transform -translate-x-1/2 top-6 w-5 h-5 rounded-full bg-sapphire border-4 border-slate-800 z-10" aria-hidden="true"></div>
-
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-                <div class="md:text-right md:pr-8">
-                  <h3 class="text-2xl font-bold text-sapphire mb-2">DevOps Engineer</h3>
-                  <p class="text-xl text-slate-300 mb-4 font-medium">Swisscom Schweiz AG</p>
-                  <ul class="space-y-3 text-slate-400 text-left md:text-right">
-                    <li>Introduced SRE principles to multiple teams</li>
-                    <li>Took over the role of Tech-Lead for an Application with an Angular Frontend and Python FastApi Backend</li>
-                  </ul>
+            <li class="timeline-item" role="listitem">
+              <div class="timeline-node" aria-hidden="true"></div>
+              <article class="timeline-card">
+                <div class="timeline-meta">
+                  <span class="timeline-date">2016 — 2020</span>
+                  <span class="timeline-location">Swisscom AG</span>
                 </div>
-
-                <div class="md:pl-8">
-                  <time class="inline-block px-4 py-2 bg-sapphire text-white rounded-full font-medium mb-4" datetime="2021">
-                    2021 - 2022
-                  </time>
-                </div>
-              </div>
-            </article>
-
-            <!-- Job 4 -->
-            <article class="relative" role="listitem">
-              <div class="absolute left-1/2 transform -translate-x-1/2 top-6 w-5 h-5 rounded-full bg-sapphire border-4 border-slate-800 z-10" aria-hidden="true"></div>
-
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-                <div class="md:text-right md:pr-8">
-                  <time class="inline-block px-4 py-2 bg-sapphire text-white rounded-full font-medium mb-4" datetime="2020">
-                    2020 - 2021
-                  </time>
-                </div>
-
-                <div class="md:pl-8">
-                  <h3 class="text-2xl font-bold text-sapphire mb-2">Fullstack Engineer</h3>
-                  <p class="text-xl text-slate-300 mb-4 font-medium">Swisscom Schweiz AG</p>
-                  <ul class="space-y-3 text-slate-400">
-                    <li>Collaboration as software developer in an agile team</li>
-                    <li>Extended Frontend Controller with Java Spring Boot</li>
-                  </ul>
-                </div>
-              </div>
-            </article>
-
-            <!-- Job 5 -->
-            <article class="relative" role="listitem">
-              <div class="absolute left-1/2 transform -translate-x-1/2 top-6 w-5 h-5 rounded-full bg-sapphire border-4 border-slate-800 z-10" aria-hidden="true"></div>
-
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-                <div class="md:text-right md:pr-8">
-                  <h3 class="text-2xl font-bold text-sapphire mb-2">Apprentice computer scientist application development</h3>
-                  <p class="text-xl text-slate-300 mb-4 font-medium">Swisscom AG</p>
-                  <ul class="space-y-3 text-slate-400 text-left md:text-right">
-                    <li>First experience gained as a software developer</li>
-                    <li>Created an Angular Application as a final project</li>
-                  </ul>
-                </div>
-
-                <div class="md:pl-8">
-                  <time class="inline-block px-4 py-2 bg-sapphire text-white rounded-full font-medium mb-4" datetime="2016">
-                    2016 - 2020
-                  </time>
-                </div>
-              </div>
-            </article>
-          </div>
+                <h3 class="timeline-title">Apprentice Software Engineer</h3>
+                <ul class="timeline-points">
+                  <li>Shipped my first Angular application as a diploma project.</li>
+                  <li>Learned enterprise-grade quality standards and customer empathy.</li>
+                </ul>
+              </article>
+            </li>
+          </ol>
         </div>
       </div>
     </section>
   </main>
 
   <!-- Footer -->
-  <footer class="bg-slate-900 border-t border-slate-800 py-8">
-    <div class="container mx-auto px-4 text-center text-slate-400">
-      <p>&copy; 2024 Joel Sahli. Built with <span class="text-sapphire">♥</span> in Switzerland.</p>
-      <p class="mt-2 text-sm">
-        <a href="mailto:contact@joelsahli.ch" class="hover:text-sapphire transition-colors">contact@joelsahli.ch</a>
-      </p>
+  <footer class="site-footer bg-slate-900 border-t border-slate-800 py-12" aria-labelledby="footer-heading">
+    <div class="container mx-auto px-4 space-y-8">
+      <div class="footer-grid">
+        <div>
+          <p id="footer-heading" class="footer-kicker">Let’s build calm, resilient software.</p>
+        </div>
+        <div class="footer-divider" aria-hidden="true"></div>
+        <div class="footer-links" aria-label="Site links">
+          <a href="#services">Services</a>
+          <a href="#skills">Skills</a>
+          <a href="#career">Career</a>
+        </div>
+        <div class="footer-social" aria-label="Social links">
+          <a href="https://www.linkedin.com/in/joel-sahli" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn profile">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5 2.5 2.5 0 0 1 4.98 3.5zm.02 4.5h-.02v12h4v-12zm6 0h-4v12h4v-6.5c0-1.77 2-1.92 2 0V20h4v-7.5c0-4.58-5-4.41-6-2.16z" />
+            </svg>
+          </a>
+          <a href="https://github.com/JoeyTheCoder" target="_blank" rel="noreferrer noopener" aria-label="GitHub profile">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.93c.58.11.79-.25.79-.56v-2c-3.2.7-3.87-1.39-3.87-1.39a3.06 3.06 0 0 0-1.28-1.7c-1.05-.72.08-.7.08-.7a2.43 2.43 0 0 1 1.77 1.2 2.47 2.47 0 0 0 3.37 1 2.46 2.46 0 0 1 .73-1.55c-2.55-.29-5.23-1.28-5.23-5.69a4.45 4.45 0 0 1 1.18-3.08 4.13 4.13 0 0 1 .11-3.05s.96-.31 3.14 1.18a10.8 10.8 0 0 1 5.72 0c2.18-1.49 3.14-1.18 3.14-1.18a4.13 4.13 0 0 1 .12 3.05 4.44 4.44 0 0 1 1.18 3.08c0 4.43-2.68 5.39-5.24 5.67a2.72 2.72 0 0 1 .78 2.11v3.12c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="footer-year">2025</span> Joel Sahli. Built in Switzerland.</p>
+      </div>
     </div>
   </footer>
 </body>
