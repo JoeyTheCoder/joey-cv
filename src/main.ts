@@ -2,6 +2,7 @@
 // This file is imported in index.html and serves as the application initialization point
 
 import './style.css'
+import { initI18n } from './i18n'
 
 // Motion preference handling
 const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
@@ -67,65 +68,70 @@ function initTypewriter() {
   const textElement = document.querySelector<HTMLElement>('[data-typewriter-text]')
   if (!textElement) return
 
-  const content = textElement.dataset.typewriterText?.trim() || textElement.textContent?.trim() || ''
-  if (!content) return
+  let content = textElement.dataset.typewriterText?.trim() || textElement.textContent?.trim() || ''
+  if (!content) return;
 
-  const duration = parseDuration(textElement.dataset.typewriterDuration ?? null, 4200)
-  const delay = parseDuration(textElement.dataset.typewriterDelay ?? null, 250)
-  const totalCharacters = content.length
+  // Split on <br> for multiline support
+  const lines = content.split(/<br\s*\/?\s*>/i);
+  const joinedContent = lines.join('\n');
+  const duration = parseDuration(textElement.dataset.typewriterDuration ?? null, 4200);
+  const delay = parseDuration(textElement.dataset.typewriterDelay ?? null, 250);
+  const totalCharacters = joinedContent.length;
 
   const renderStatic = () => {
-    textElement.textContent = content
-    textElement.classList.remove('is-typing')
-    textElement.classList.add('typewriter-static', 'typing-complete')
-  }
+    textElement.innerHTML = lines.map(line => line).join('<br>');
+    textElement.classList.remove('is-typing');
+    textElement.classList.add('typewriter-static', 'typing-complete');
+  };
 
   if (prefersReducedMotion) {
-    renderStatic()
-    return
+    renderStatic();
+    return;
   }
 
   const beginTyping = () => {
-    if (textElement.dataset.typingStarted === 'true') return
-    textElement.dataset.typingStarted = 'true'
+    if (textElement.dataset.typingStarted === 'true') return;
+    textElement.dataset.typingStarted = 'true';
 
-    textElement.textContent = ''
-    textElement.classList.add('is-typing')
+    textElement.innerHTML = '';
+    textElement.classList.add('is-typing');
 
-    const minimumDelay = 18
-    const charDelay = Math.max(Math.floor(duration / Math.max(totalCharacters, 1)), minimumDelay)
+    const minimumDelay = 18;
+    const charDelay = Math.max(Math.floor(duration / Math.max(totalCharacters, 1)), minimumDelay);
 
-    let index = 0
+    let index = 0;
     const typeNext = () => {
-      index += 1
-      textElement.textContent = content.slice(0, index)
+      index += 1;
+      // Show up to current index, then replace \n with <br>
+      const partial = joinedContent.slice(0, index).replace(/\n/g, '<br>');
+      textElement.innerHTML = partial;
 
       if (index < totalCharacters) {
-        window.setTimeout(typeNext, charDelay)
+        window.setTimeout(typeNext, charDelay);
       } else {
-        textElement.classList.remove('is-typing')
-        textElement.classList.add('typing-complete')
+        textElement.classList.remove('is-typing');
+        textElement.classList.add('typing-complete');
       }
-    }
+    };
 
-    window.setTimeout(typeNext, 0)
-  }
+    window.setTimeout(typeNext, 0);
+  };
 
   const triggerTyping = () => {
-    window.setTimeout(beginTyping, delay)
-  }
+    window.setTimeout(beginTyping, delay);
+  };
 
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver(entries => {
       if (entries.some(entry => entry.isIntersecting)) {
-        triggerTyping()
-        observer.disconnect()
+        triggerTyping();
+        observer.disconnect();
       }
-    }, { threshold: 0.6 })
+    }, { threshold: 0.6 });
 
-    observer.observe(textElement)
+    observer.observe(textElement);
   } else {
-    triggerTyping()
+    triggerTyping();
   }
 }
 
@@ -141,14 +147,23 @@ function initNavToggle() {
   const navbar = document.querySelector<HTMLElement>('.navbar')
   const toggle = document.querySelector<HTMLButtonElement>('.nav-toggle')
   const menu = document.getElementById('primary-nav')
+  const iconBurger = toggle?.querySelector('.nav-toggle-burger') as HTMLElement | null
+  const iconClose = toggle?.querySelector('.nav-toggle-close') as HTMLElement | null
 
-  if (!navbar || !toggle || !menu) {
+  if (!navbar || !toggle || !menu || !iconBurger || !iconClose) {
     return
   }
 
   const setOpen = (isOpen: boolean) => {
     navbar.classList.toggle('nav-open', isOpen)
     toggle.setAttribute('aria-expanded', String(isOpen))
+    if (isOpen) {
+      iconBurger.style.display = 'none'
+      iconClose.style.display = 'block'
+    } else {
+      iconBurger.style.display = 'block'
+      iconClose.style.display = 'none'
+    }
   }
 
   toggle.addEventListener('click', () => {
@@ -169,6 +184,19 @@ function initNavToggle() {
 
 // Main initialization
 document.addEventListener('DOMContentLoaded', () => {
+  // Set contact form action from env variable
+  const formspreeEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT || '';
+  const contactForm = document.querySelector('form[action][method="POST"]');
+  if (contactForm && formspreeEndpoint) {
+    contactForm.setAttribute('action', formspreeEndpoint);
+  }
+    // Smooth scroll for all contact buttons
+    document.querySelectorAll<HTMLButtonElement>('.contact-scroll-trigger').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        smoothScrollToSection('contact');
+      });
+    });
   console.log('🎬 Animation check:', prefersReducedMotion ? '⚠️ Reduced motion is ON' : '✅ Animations enabled')
 
   // Feature 4: Scroll arrow buttons
@@ -195,14 +223,29 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   })
 
+
   // Feature 2: Initialize typewriter
   initTypewriter()
+
+  // Listen for language changes and re-run typewriter with new text
+  window.addEventListener('languagechange', () => {
+    // Remove typing-complete and typewriter-static classes to allow re-animation
+    const typewriterEl = document.querySelector<HTMLElement>('[data-typewriter-text]');
+    if (typewriterEl) {
+      typewriterEl.classList.remove('typing-complete', 'typewriter-static');
+      typewriterEl.dataset.typingStarted = 'false';
+      initTypewriter();
+    }
+  });
 
   // Feature 3: Navbar toggle
   initNavToggle()
 
   // Feature 9: Set current year
   setDynamicYear()
+
+  // Feature 10: Initialize i18n (internationalization)
+  initI18n()
 
   console.log('✅ All features initialized with accessibility support')
   console.log('   - Typewriter animation (respects prefers-reduced-motion)')

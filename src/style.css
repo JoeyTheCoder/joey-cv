@@ -1,9 +1,13 @@
-/* Google Fonts - Inter for body/headings */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-/* Google Fonts - Fira Code for monospace */
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap');
 @import "tailwindcss";
+
+@media (max-width: 768px) {
+  .scroll-arrow {
+    display: none !important;
+  }
+}
 
 /* CSS Custom Properties - Sapphire Theme Variables */
 :root {
@@ -75,12 +79,12 @@ main {
 }
 
 .nav-shell {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
   min-height: var(--navbar-height);
   position: relative;
+  gap: 0;
 }
 
 .nav-logo {
@@ -124,15 +128,18 @@ main {
 .nav-menu {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  flex: 1;
-  gap: 2rem;
+  justify-content: center;
+  width: 100%;
+  gap: 0;
+  position: relative;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
   gap: 1.75rem;
+  justify-content: center;
+  flex: 1;
 }
 
 .nav-links a {
@@ -151,6 +158,7 @@ main {
   display: flex;
   align-items: center;
   gap: 1rem;
+  margin-left: auto;
 }
 
 .nav-contact {
@@ -196,9 +204,20 @@ main {
   border: 1px solid rgba(148, 163, 184, 0.4);
   background: rgba(2, 6, 23, 0.4);
   display: none;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  gap: 0.35rem;
+  position: relative;
+}
+.nav-toggle-icon {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .nav-toggle-bar {
@@ -592,13 +611,16 @@ img[loading="lazy"] {
   margin: 0;
   margin-bottom: clamp(1.25rem, 2vw, 1.75rem);
   text-align: inherit;
+  /* Reserve space for 4 lines of text (adjust as needed) */
+  min-height: 7.2em;
 }
 
 .typewriter-text {
   display: inline-flex;
   flex-wrap: wrap;
   line-height: 1.5;
-  min-height: 1.5em;
+  /* Reserve space for 4 lines of text (adjust as needed) */
+  min-height: 6em;
   border-right: 2px solid transparent;
   padding-right: 0.2rem;
 }
@@ -783,6 +805,19 @@ img[loading="lazy"] {
   font-weight: 600;
   line-height: 1.4;
   margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+
+@media (max-width: 900px) {
+  .about-lead {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-lead {
+    font-size: 1.15rem;
+  }
 }
 
 .about-paragraph {

@@ -5,12 +5,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Joel Sahli - Fullstack Software Engineer, DevOps Engineer, and Agile Leader based in Switzerland. Professional portfolio and CV.">
   <title>Joel Sahli | Fullstack Software Engineer</title>
+  <!-- SEO: Open Graph -->
+  <meta property="og:title" content="Joel Sahli | Fullstack Software Engineer">
+  <meta property="og:description" content="Joel Sahli - Fullstack Software Engineer, DevOps Engineer, and Agile Leader based in Switzerland. Professional portfolio and CV.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://joelsahli.ch/">
+  <meta property="og:image" content="https://joelsahli.ch/assets/img/og-image.jpg">
+  <!-- SEO: Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Joel Sahli | Fullstack Software Engineer">
+  <meta name="twitter:description" content="Joel Sahli - Fullstack Software Engineer, DevOps Engineer, and Agile Leader based in Switzerland. Professional portfolio and CV.">
+  <meta name="twitter:image" content="https://joelsahli.ch/assets/img/og-image.jpg">
+  <!-- SEO: Canonical and robots -->
+  <link rel="canonical" href="https://joelsahli.ch/">
+  <meta name="robots" content="index, follow">
+  <!-- SEO: JSON-LD Structured Data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Joel Sahli",
+      "url": "https://joelsahli.ch/",
+      "image": "https://joelsahli.ch/assets/img/og-image.jpg",
+      "jobTitle": ["Fullstack Software Engineer", "DevOps Engineer", "Agile Leader"],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Freelance"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "CH"
+      },
+      "sameAs": [
+        "https://github.com/JoelTheCoder",
+        "https://www.linkedin.com/in/joel-sahli/"
+      ]
+    }
+  </script>
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-597STBYM66"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-597STBYM66');
+  </script>
   <link href="src/style.css" rel="stylesheet">
   <script type="module" src="/src/main.ts"></script>
 </head>
 <body class="bg-slate-900 text-white font-sans antialiased">
   <!-- Skip to main content for screen readers and keyboard navigation -->
-  <a href="#main-content" class="skip-to-main">Skip to main content</a>
+  <a href="#main-content" class="skip-to-main" data-i18n="nav.skipToMain">Skip to main content</a>
 
   <!-- Navigation Bar - sticky with improved focus states -->
   <nav class="navbar fixed w-full z-50" role="navigation" aria-label="Main navigation">
@@ -23,19 +68,32 @@
       </a>
 
       <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav">
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
+        <!-- Burger icon -->
+        <span class="nav-toggle-icon nav-toggle-burger" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:block;margin:auto;" xmlns="http://www.w3.org/2000/svg">
+            <line x1="4" y1="7" x2="20" y2="7" />
+            <line x1="4" y1="12" x2="20" y2="12" />
+            <line x1="4" y1="17" x2="20" y2="17" />
+          </svg>
+        </span>
+        <!-- Close icon -->
+        <span class="nav-toggle-icon nav-toggle-close" aria-hidden="true" style="display:none;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:block;margin:auto;" xmlns="http://www.w3.org/2000/svg">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </span>
       </button>
 
       <div class="nav-menu" id="primary-nav">
         <div class="nav-links" role="list">
-          <a href="#about" role="listitem">About</a>
-          <a href="#services" role="listitem">Services</a>
-          <a href="#skills" role="listitem">Skills</a>
-          <a href="#career" role="listitem">Career</a>
+          <a href="#about" role="listitem" data-i18n="nav.about">About</a>
+          <a href="#services" role="listitem" data-i18n="nav.services">Services</a>
+          <a href="#skills" role="listitem" data-i18n="nav.skills">Skills</a>
+          <a href="#career" role="listitem" data-i18n="nav.career">Career</a>
         </div>
         <div class="nav-actions">
-          <a href="mailto:contact@joelsahli.ch" class="nav-contact" aria-label="Contact Joel Sahli via email">
+          <a href="#contact" class="nav-contact" aria-label="Contact Joel Sahli via form" data-i18n="nav.contact">
             Contact
           </a>
           <div class="nav-lang" role="group" aria-label="Language selector">
@@ -67,30 +125,50 @@
 
       <div class="hero-shell container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-8" style="position: relative; z-index: 10;">
         <div class="hero-copy text-center md:text-left md:w-1/2 space-y-6">
-          <h1 id="hero-heading" class="text-5xl md:text-7xl font-bold mb-4 tracking-tight">
+          <h1 id="hero-heading" class="text-5xl md:text-7xl font-bold mb-4 tracking-tight" data-i18n="hero.name">
             Joel Sahli
           </h1>
           <p class="hero-tagline text-xl md:text-2xl text-slate-300 mb-6 font-medium" aria-live="polite">
             <span
               class="typewriter-text"
-              data-typewriter-text="Fullstack Software Engineer / DevOps Engineer / Agile Leader Based in Switzerland 🇨🇭"
-              data-typewriter-duration="4200"
-              data-typewriter-delay="250"
-              data-typewriter-steps="78">
-              Fullstack Software Engineer / DevOps Engineer / Agile Leader Based in Switzerland 🇨🇭
+              id="typewriter-text-init"
+              data-typewriter-text="Fullstack Software Engineer<br>DevOps Engineer<br>Agile Leader<br>Based in Switzerland"
+              data-typewriter-duration="3500"
+              data-typewriter-delay="200"
+              data-typewriter-steps="80">
+              Fullstack Software Engineer<br>DevOps Engineer<br>Agile Leader<br>Based in Switzerland
             </span>
+            <script>
+              // Set initial typewriter text based on preferred language in localStorage or browser
+              (function() {
+                var preferred = localStorage.getItem('preferred-language');
+                var lang = preferred || (navigator.language && navigator.language.toLowerCase().startsWith('de') ? 'de' : 'en');
+                var el = document.getElementById('typewriter-text-init');
+                if (el) {
+                  if (lang === 'de') {
+                    el.setAttribute('data-typewriter-text', 'Fullstack Software Engineer<br>DevOps Engineer<br>Agile Leader<br>aus der Schweiz');
+                    el.innerHTML = 'Fullstack Software Engineer<br>DevOps Engineer<br>Agile Leader<br>aus der Schweiz';
+                  } else {
+                    el.setAttribute('data-typewriter-text', 'Fullstack Software Engineer<br>DevOps Engineer<br>Agile Leader<br>Based in Switzerland');
+                    el.innerHTML = 'Fullstack Software Engineer<br>DevOps Engineer<br>Agile Leader<br>Based in Switzerland';
+                  }
+                }
+              })();
+            </script>
           </p>
 
           <!-- Primary CTAs -->
           <div class="hero-cta-group flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
             <a href="#services"
                class="hero-cta hero-cta-primary"
-               aria-label="View services">
+               aria-label="View services"
+               data-i18n="hero.viewServices">
               View Services
             </a>
-            <a href="mailto:contact@joelsahli.ch"
-               class="hero-cta hero-cta-secondary"
-               aria-label="Get in touch">
+            <a class="hero-cta hero-cta-secondary"
+               href="#contact"
+               aria-label="Show contact form"
+               data-i18n="hero.getInTouch">
               Get in Touch
             </a>
           </div>
@@ -110,6 +188,7 @@
             <div class="hero-avatar relative z-10 rounded-full overflow-hidden border-4 border-sapphire/30 shadow-xl shadow-sapphire/20">
               <img src="assets/img/joel-cv.jpeg"
                    alt="Portrait of Joel Sahli, Fullstack Software Engineer"
+                   data-i18n-alt="hero.profileAlt"
                    class="w-full h-full object-cover"
                    loading="eager"
                    onerror="this.src='https://via.placeholder.com/400?text=Profile+Image'">
@@ -119,7 +198,7 @@
       </div>
 
       <!-- Scroll indicator with accessibility -->
-      <button class="scroll-arrow absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce bg-transparent border-0 cursor-pointer p-2 hover:scale-110 transition-transform focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sapphire/50 rounded-full" aria-label="Scroll to about section" data-scroll-to="about">
+      <button class="scroll-arrow absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce bg-transparent border-0 cursor-pointer p-2 hover:scale-110 transition-transform focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sapphire/50 rounded-full" aria-label="Scroll to about section" data-i18n-aria-label="hero.scrollToAbout" data-scroll-to="about">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-sapphire" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
         </svg>
@@ -144,52 +223,50 @@
         <div class="about-content container mx-auto px-4 py-16">
           <div class="about-grid">
             <article class="about-panel about-panel-lead" aria-labelledby="about-heading">
-              <h2 id="about-heading" class="text-4xl md:text-5xl font-bold" style="padding-bottom: 10px;">About me</h2>
-              <p class="about-lead text-2xl text-slate-200">Swiss-born engineer translating complex challenges into elegant, human-friendly software.</p>
-              <p class="about-paragraph text-slate-300">I collaborate with product teams across Europe to ship delightful user experiences, production-ready code, and DevOps automation that scales with your ambitions.</p>
+              <h2 id="about-heading" class="text-4xl md:text-5xl font-bold mb-6 md:mb-10 lg:mb-12" data-i18n="about.heading">About me</h2>
+              <p class="about-lead text-2xl text-slate-200" data-i18n="about.lead">I build software people enjoy using. I explain the process in plain language and partner with product teams to turn tricky problems into simple, human-friendly products.</p>
+              <p class="about-paragraph text-slate-300" data-i18n="about.paragraph">I help deliver great UX, production-ready code, and DevOps that scales with your ambitions. I'm always learning and excited by interesting challenges — if you'd like someone who gets things done without the jargon, let's talk.</p>
 
               <div class="about-meta" role="list" aria-label="Experience highlights">
                 <div class="about-meta-card" role="listitem">
-                  <p class="about-meta-value">7+</p>
-                  <p class="about-meta-label">Years building products</p>
+                  <p class="about-meta-value" data-i18n="about.metaYearsValue">9 Years</p>
+                  <p class="about-meta-label" data-i18n="about.metaYearsLabel">Professional Experience</p>
                 </div>
                 <div class="about-meta-card" role="listitem">
-                  <p class="about-meta-value">30+</p>
-                  <p class="about-meta-label">Projects shipped</p>
+                  <p class="about-meta-value" data-i18n="about.metaProjectsValue">30+</p>
+                  <p class="about-meta-label" data-i18n="about.metaProjectsLabel">Projects shipped</p>
                 </div>
                 <div class="about-meta-card" role="listitem">
-                  <p class="about-meta-value">3</p>
-                  <p class="about-meta-label">Leadership roles</p>
+                  <p class="about-meta-value" data-i18n="about.metaLeadershipValue">3</p>
+                  <p class="about-meta-label" data-i18n="about.metaLeadershipLabel">Leadership roles</p>
                 </div>
               </div>
             </article>
 
             <article class="about-panel" aria-label="How I help teams">
-              <h3 class="about-subheading">How I help teams</h3>
-              <p class="about-paragraph">From rapid prototypes to regulated enterprise systems, I bridge architecture, delivery, and mentoring so teams can move with confidence.</p>
+              <h3 class="about-subheading" data-i18n="about.howIHelpHeading">How I help teams</h3>
+              <p class="about-paragraph" data-i18n="about.howIHelpParagraph">From sketch to scale: I connect good architecture with dependable delivery so businesses can move confidently.</p>
               <ul class="about-list">
-                <li><span aria-hidden="true">▹</span>Design resilient frontends (Angular, Vite, Tailwind) that stay lightweight.</li>
-                <li><span aria-hidden="true">▹</span>Build cloud-ready APIs and integrations powered by Java, .NET, and Python.</li>
-                <li><span aria-hidden="true">▹</span>Automate release pipelines with IaC, Kubernetes, and Azure DevOps.</li>
+                <li><span aria-hidden="true">▹</span><span data-i18n="about.howIHelpList1">Frontends that feel snappy and are easy to maintain (Angular, Vite, Tailwind).</span></li>
+                <li><span aria-hidden="true">▹</span><span data-i18n="about.howIHelpList2">APIs and integrations built for reliability and clarity (Java, .NET, Python).</span></li>
+                <li><span aria-hidden="true">▹</span><span data-i18n="about.howIHelpList3">Repeatable release pipelines and infra-as-code using Kubernetes and Azure DevOps.</span></li>
               </ul>
             </article>
 
             <article class="about-panel" aria-label="Ways of working">
-              <h3 class="about-subheading">Ways of working</h3>
-              <p class="about-paragraph">I create calm, outcome-focused delivery rhythms—facilitating standups in the morning, reviewing pull requests at lunch, and pairing with engineers in the afternoon.</p>
-              <div class="about-tags" role="list">
-                <span class="about-tag" role="listitem">Agile leadership</span>
-                <span class="about-tag" role="listitem">Servant coaching</span>
-                <span class="about-tag" role="listitem">Continuous discovery</span>
-                <span class="about-tag" role="listitem">Quality-first mindset</span>
-              </div>
-              <p class="about-paragraph text-slate-300 font-medium">Let’s align on your roadmap and build a delivery plan that your stakeholders can trust.</p>
+              <h3 class="about-subheading" data-i18n="about.waysOfWorkingHeading">Ways of working</h3>
+              <p class="about-paragraph" data-i18n="about.waysOfWorkingParagraph">Scrum‑savvy full‑stack developer who builds products tailored to your needs. I use practical rhythms where they help, then focus on delivering the right outcomes — not selling process, shipping product.</p>
+              <ul class="about-list">
+                <li><span aria-hidden="true">▹</span><span data-i18n="about.waysOfWorkingList1">Product-first delivery: align roadmap and work to measurable outcomes.</span></li>
+                <li><span aria-hidden="true">▹</span><span data-i18n="about.waysOfWorkingList2">Hands-on development across frontend and backend.</span></li>
+                <li><span aria-hidden="true">▹</span><span data-i18n="about.waysOfWorkingList3">Pairing, code reviews, and a quality-first engineering mindset.</span></li>
+              </ul>
             </article>
           </div>
         </div>
 
         <div class="about-scroll">
-          <button class="scroll-arrow animate-bounce bg-transparent border-0 cursor-pointer p-2 hover:scale-110 transition-transform focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sapphire/50 rounded-full" aria-label="Scroll to services section" data-scroll-to="services">
+          <button class="scroll-arrow animate-bounce bg-transparent border-0 cursor-pointer p-2 hover:scale-110 transition-transform focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sapphire/50 rounded-full" aria-label="Scroll to services section" data-i18n-aria-label="about.scrollToServices" data-scroll-to="services">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-sapphire" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
             </svg>
@@ -203,9 +280,11 @@
       <div class="container mx-auto px-4">
         <!-- Section Header -->
         <div class="services-header text-center mb-16">
-          <p class="section-kicker">HOW WE CAN PARTNER</p>
-          <h2 id="services-heading" class="text-4xl md:text-5xl font-bold mb-4">Your company in focus</h2>
-          <p class="text-xl text-slate-300">Select the collaboration mode that meets your runway, product maturity, and delivery cadence.</p>
+          <p class="section-kicker" data-i18n="services.kicker">HOW WE CAN PARTNER</p>
+          <h2 id="services-heading" class="text-4xl md:text-5xl font-bold mb-4" data-i18n="services.heading">Your company in focus</h2>
+          <p class="text-xl text-slate-300" data-i18n="services.intro">
+            Whether you need a new website, want to automate your business, or are looking for expert advice, I help small businesses grow with modern, reliable technology. Let's find the right solution for your goals and budget.
+          </p>
         </div>
 
         <div class="services-grid">
@@ -213,73 +292,66 @@
             <div class="service-card-head">
               <span class="service-icon" aria-hidden="true">🌐</span>
               <div>
-                <h3>Web Platforms</h3>
-                <p class="service-tagline">Sites · systems · automation</p>
+                <h3 data-i18n="services.webPlatformsTitle">Web Platforms</h3>
+                <p class="service-tagline" data-i18n="services.webPlatformsTagline">Sites · systems · automation</p>
               </div>
             </div>
             <ul class="service-deliverables">
-              <li>Marketing sites wired for analytics and localization.</li>
-              <li>Design systems reusable across React, Angular, Web Components.</li>
-              <li>Vite/Tailwind builds tuned for Core Web Vitals.</li>
+              <li data-i18n="services.webPlatformsList1">Launch a website that works for you: attract new customers, showcase your business, and update your content easily—no tech skills needed.</li>
+              <li data-i18n="services.webPlatformsList2">Get analytics to understand your visitors and localization to reach more people.</li>
+              <li data-i18n="services.webPlatformsList3">Design systems that keep your site looking sharp and consistent.</li>
+              <li data-i18n="services.webPlatformsList4">Built with fast, modern tools for top performance.</li>
             </ul>
-            <div class="service-meta">
-              <span class="service-badge">2–6 week sprints</span>
-              <span class="service-stack">Astro · Angular · Headless CMS</span>
-            </div>
+         
           </article>
 
           <article class="service-card" aria-label="Product applications">
             <div class="service-card-head">
               <span class="service-icon" aria-hidden="true">📱</span>
               <div>
-                <h3>Product Applications</h3>
-                <p class="service-tagline">Portals · workflows · APIs</p>
+                <h3 data-i18n="services.productAppsTitle">Product Applications</h3>
+                <p class="service-tagline" data-i18n="services.productAppsTagline">Portals · workflows · APIs</p>
               </div>
             </div>
             <ul class="service-deliverables">
-              <li>Modular monorepos that span web, mobile, and desktop.</li>
-              <li>Observable backend services with clean contracts.</li>
-              <li>CI/CD pipelines featuring preview environments and QA gates.</li>
+              <li data-i18n="services.productAppsList1">Automate your daily tasks and connect your favorite tools—save time and reduce errors.</li>
+              <li data-i18n="services.productAppsList2">Custom portals and workflows tailored to your business needs.</li>
+              <li data-i18n="services.productAppsList3">Reliable APIs and integrations so everything works together seamlessly.</li>
+              <li data-i18n="services.productAppsList4">Preview changes safely before they go live.</li>
             </ul>
-            <div class="service-meta">
-              <span class="service-badge">Fractional team lead</span>
-              <span class="service-stack">.NET · Java · FastAPI · Azure</span>
-            </div>
+       
           </article>
 
           <article class="service-card" aria-label="Automation and operations">
             <div class="service-card-head">
               <span class="service-icon" aria-hidden="true">⚙️</span>
               <div>
-                <h3>Automation & Ops</h3>
-                <p class="service-tagline">DevOps · FinOps · reliability</p>
+                <h3 data-i18n="services.automationTitle">Automation & Ops</h3>
+                <p class="service-tagline" data-i18n="services.automationTagline">DevOps · FinOps · reliability</p>
               </div>
             </div>
             <ul class="service-deliverables">
-              <li>Kubernetes, Terraform, and GitHub Actions starter kits.</li>
-              <li>Dashboards with live SLOs and clear error budgets.</li>
-              <li>Enablement playbooks and confident on-call rituals.</li>
+              <li data-i18n="services.automationList1">Keep your business running smoothly and securely with expert automation.</li>
+              <li data-i18n="services.automationList2">Monitor your systems with clear dashboards and alerts.</li>
+              <li data-i18n="services.automationList3">Get help setting up cloud, backups, and security—no more tech headaches.</li>
+              <li data-i18n="services.automationList4">Proven solutions for peace of mind.</li>
             </ul>
-            <div class="service-meta">
-              <span class="service-badge">Retainer & advisory</span>
-              <span class="service-stack">Kubernetes · Terraform · Grafana</span>
-            </div>
           </article>
         </div>
 
         <div class="services-footer">
           <div>
-            <p class="services-footer-kicker">Need something custom?</p>
-            <p class="text-slate-300">Send over your deck or backlog—we'll co-create a plan within 48 hours.</p>
+            <p class="services-footer-kicker" data-i18n="services.footerKicker">Need something custom?</p>
+            <p class="text-slate-300" data-i18n="services.footerText">Send over your deck or backlog—we'll co-create a plan within 48 hours.</p>
           </div>
-          <a href="mailto:contact@joelsahli.ch" class="services-footer-cta" aria-label="Contact Joel for services">
-            Schedule a call
+          <a href="#contact" class="services-footer-cta" aria-label="Contact Joel for services" data-i18n="services.footerCta">
+            Contact Me
           </a>
         </div>
 
         <!-- Scroll indicator -->
         <div class="flex justify-center mt-16">
-          <button class="scroll-arrow animate-bounce bg-transparent border-0 cursor-pointer p-2 hover:scale-110 transition-transform focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sapphire/50 rounded-full" aria-label="Scroll to skills section" data-scroll-to="skills">
+          <button class="scroll-arrow animate-bounce bg-transparent border-0 cursor-pointer p-2 hover:scale-110 transition-transform focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sapphire/50 rounded-full" aria-label="Scroll to skills section" data-i18n-aria-label="services.scrollToSkills" data-scroll-to="skills">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-sapphire" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
             </svg>
@@ -293,8 +365,8 @@
       <div class="container mx-auto px-4">
         <!-- Section Header -->
         <div class="text-center mb-16">
-          <h2 id="skills-heading" class="text-4xl md:text-5xl font-bold mb-4">Skills & Technologies</h2>
-          <p class="text-xl text-slate-300 mb-8">Tools and technologies I work with daily</p>
+          <h2 id="skills-heading" class="text-4xl md:text-5xl font-bold mb-4" data-i18n="skills.heading">Skills & Technologies</h2>
+          <p class="text-xl text-slate-300 mb-8" data-i18n="skills.subheading">Tools and technologies I work with daily</p>
           <div class="w-24 h-1 bg-gradient-to-r from-sapphire to-red-500 mx-auto rounded-full" aria-hidden="true"></div>
         </div>
 
@@ -303,8 +375,8 @@
             <div class="skills-card-header">
               <div class="skills-card-icon" aria-hidden="true">🎨</div>
               <div>
-                <h3 class="skills-card-title">Frontend Development</h3>
-                <p class="skills-card-meta">Design systems • Accessibility • High-performance SPAs</p>
+                <h3 class="skills-card-title" data-i18n="skills.frontendTitle">Frontend Development</h3>
+                <p class="skills-card-meta" data-i18n="skills.frontendMeta">Design systems • Accessibility • High-performance SPAs</p>
               </div>
             </div>
             <div class="skills-chip-group" aria-label="Frontend technologies">
@@ -316,9 +388,9 @@
               <span class="skills-chip">Storybook</span>
             </div>
             <div class="skills-spotlights" aria-label="Frontend spotlights">
-              <span>Design systems</span>
-              <span>Accessibility QA</span>
-              <span>Storybook reviews</span>
+              <span data-i18n="skills.frontendSpotlight1">Design systems</span>
+              <span data-i18n="skills.frontendSpotlight2">Accessibility QA</span>
+              <span data-i18n="skills.frontendSpotlight3">Storybook reviews</span>
             </div>
           </article>
 
@@ -326,8 +398,8 @@
             <div class="skills-card-header">
               <div class="skills-card-icon" aria-hidden="true">⚙️</div>
               <div>
-                <h3 class="skills-card-title">Backend & APIs</h3>
-                <p class="skills-card-meta">Cloud-native services • Secure integrations</p>
+                <h3 class="skills-card-title" data-i18n="skills.backendTitle">Backend & APIs</h3>
+                <p class="skills-card-meta" data-i18n="skills.backendMeta">Cloud-native services • Secure integrations</p>
               </div>
             </div>
             <div class="skills-chip-group" aria-label="Backend technologies">
@@ -340,9 +412,9 @@
               <span class="skills-chip">MongoDB</span>
             </div>
             <div class="skills-spotlights" aria-label="Backend spotlights">
-              <span>Event-driven APIs</span>
-              <span>Secure delivery</span>
-              <span>Data modeling</span>
+              <span data-i18n="skills.backendSpotlight1">Event-driven APIs</span>
+              <span data-i18n="skills.backendSpotlight2">Secure delivery</span>
+              <span data-i18n="skills.backendSpotlight3">Data modeling</span>
             </div>
           </article>
 
@@ -350,8 +422,8 @@
             <div class="skills-card-header">
               <div class="skills-card-icon" aria-hidden="true">🚀</div>
               <div>
-                <h3 class="skills-card-title">DevOps & Cloud</h3>
-                <p class="skills-card-meta">Automation • Observability • Secure delivery</p>
+                <h3 class="skills-card-title" data-i18n="skills.devopsTitle">DevOps & Cloud</h3>
+                <p class="skills-card-meta" data-i18n="skills.devopsMeta">Automation • Observability • Secure delivery</p>
               </div>
             </div>
             <div class="skills-chip-group" aria-label="DevOps technologies">
@@ -363,9 +435,9 @@
               <span class="skills-chip">CI/CD</span>
             </div>
             <div class="skills-spotlights" aria-label="DevOps spotlights">
-              <span>Release automation</span>
-              <span>Observability</span>
-              <span>Cloud governance</span>
+              <span data-i18n="skills.devopsSpotlight1">Release automation</span>
+              <span data-i18n="skills.devopsSpotlight2">Observability</span>
+              <span data-i18n="skills.devopsSpotlight3">Cloud governance</span>
             </div>
           </article>
 
@@ -373,8 +445,8 @@
             <div class="skills-card-header">
               <div class="skills-card-icon" aria-hidden="true">👥</div>
               <div>
-                <h3 class="skills-card-title">Tools & Leadership</h3>
-                <p class="skills-card-meta">Facilitation • Coaching • Quality culture</p>
+                <h3 class="skills-card-title" data-i18n="skills.leadershipTitle">Tools & Leadership</h3>
+                <p class="skills-card-meta" data-i18n="skills.leadershipMeta">Facilitation • Coaching • Quality culture</p>
               </div>
             </div>
             <div class="skills-chip-group" aria-label="Leadership tools">
@@ -387,16 +459,16 @@
               <span class="skills-chip">Git</span>
             </div>
             <div class="skills-spotlights" aria-label="Leadership spotlights">
-              <span>Team facilitation</span>
-              <span>Mentorship</span>
-              <span>Agile coaching</span>
+              <span data-i18n="skills.leadershipSpotlight1">Team facilitation</span>
+              <span data-i18n="skills.leadershipSpotlight2">Mentorship</span>
+              <span data-i18n="skills.leadershipSpotlight3">Agile coaching</span>
             </div>
           </article>
         </div>
 
         <!-- Scroll indicator -->
         <div class="flex justify-center mt-16">
-          <button class="scroll-arrow animate-bounce bg-transparent border-0 cursor-pointer p-2 hover:scale-110 transition-transform focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sapphire/50 rounded-full" aria-label="Scroll to career section" data-scroll-to="career">
+          <button class="scroll-arrow animate-bounce bg-transparent border-0 cursor-pointer p-2 hover:scale-110 transition-transform focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sapphire/50 rounded-full" aria-label="Scroll to career section" data-i18n-aria-label="skills.scrollToCareer" data-scroll-to="career">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-sapphire" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
             </svg>
@@ -410,7 +482,7 @@
       <div class="container mx-auto px-4">
         <!-- Section Header -->
         <div class="text-center mb-16">
-          <h2 id="career-heading" class="text-4xl md:text-5xl font-bold mb-4">My professional career</h2>
+          <h2 id="career-heading" class="text-4xl md:text-5xl font-bold mb-4" data-i18n="career.heading">My professional career</h2>
           <div class="w-24 h-1 bg-sapphire mx-auto mt-8 rounded-full" aria-hidden="true"></div>
         </div>
 
@@ -422,14 +494,14 @@
               <div class="timeline-node" aria-hidden="true"></div>
               <article class="timeline-card">
                 <div class="timeline-meta">
-                  <span class="timeline-date">2023 — Today</span>
-                  <span class="timeline-location">Infosoft Systems AG</span>
+                  <span class="timeline-date" data-i18n="career.job1Date">2023 — Today</span>
+                  <span class="timeline-location" data-i18n="career.job1Location">Infosoft Systems AG</span>
                 </div>
-                <h3 class="timeline-title">Fullstack Software Engineer</h3>
+                <h3 class="timeline-title" data-i18n="career.job1Title">Fullstack Software Engineer</h3>
                 <ul class="timeline-points">
-                  <li>Extended Ionic mobile apps and rolled out an offline-first document platform.</li>
-                  <li>Modernized legacy .NET services and APIs without interrupting production traffic.</li>
-                  <li>Introduced automated release gates and code quality dashboards.</li>
+                  <li data-i18n="career.job1Point1">Extended Ionic mobile apps and rolled out an offline-first document platform.</li>
+                  <li data-i18n="career.job1Point2">Modernized legacy .NET services and APIs without interrupting production traffic.</li>
+                  <li data-i18n="career.job1Point3">Introduced automated release gates and code quality dashboards.</li>
                 </ul>
               </article>
             </li>
@@ -438,14 +510,14 @@
               <div class="timeline-node" aria-hidden="true"></div>
               <article class="timeline-card">
                 <div class="timeline-meta">
-                  <span class="timeline-date">2022 — 2023</span>
-                  <span class="timeline-location">Swisscom Schweiz AG</span>
+                  <span class="timeline-date" data-i18n="career.job2Date">2022 — 2023</span>
+                  <span class="timeline-location" data-i18n="career.job2Location">Swisscom Schweiz AG</span>
                 </div>
-                <h3 class="timeline-title">Scrum Master</h3>
+                <h3 class="timeline-title" data-i18n="career.job2Title">Scrum Master</h3>
                 <ul class="timeline-points">
-                  <li>Facilitated a distributed team of eight across Zürich, Riga, and Rotterdam.</li>
-                  <li>Launched a community of practice to share learnings between teams.</li>
-                  <li>Tracked delivery health with lean metrics and calm stakeholder comms.</li>
+                  <li data-i18n="career.job2Point1">Facilitated a distributed team of eight across Zürich, Riga, and Rotterdam.</li>
+                  <li data-i18n="career.job2Point2">Launched a community of practice to share learnings between teams.</li>
+                  <li data-i18n="career.job2Point3">Tracked delivery health with lean metrics and calm stakeholder comms.</li>
                 </ul>
               </article>
             </li>
@@ -454,14 +526,14 @@
               <div class="timeline-node" aria-hidden="true"></div>
               <article class="timeline-card">
                 <div class="timeline-meta">
-                  <span class="timeline-date">2021 — 2022</span>
-                  <span class="timeline-location">Swisscom Schweiz AG</span>
+                  <span class="timeline-date" data-i18n="career.job3Date">2021 — 2022</span>
+                  <span class="timeline-location" data-i18n="career.job3Location">Swisscom Schweiz AG</span>
                 </div>
-                <h3 class="timeline-title">DevOps Engineer</h3>
+                <h3 class="timeline-title" data-i18n="career.job3Title">DevOps Engineer</h3>
                 <ul class="timeline-points">
-                  <li>Embedded SRE guidelines into multiple product teams.</li>
-                  <li>Acted as Tech Lead for an Angular + FastAPI customer platform.</li>
-                  <li>Implemented blue/green deployments with observability guardrails.</li>
+                  <li data-i18n="career.job3Point1">Embedded SRE guidelines into multiple product teams.</li>
+                  <li data-i18n="career.job3Point2">Acted as Tech Lead for an Angular + FastAPI customer platform.</li>
+                  <li data-i18n="career.job3Point3">Implemented blue/green deployments with observability guardrails.</li>
                 </ul>
               </article>
             </li>
@@ -470,13 +542,13 @@
               <div class="timeline-node" aria-hidden="true"></div>
               <article class="timeline-card">
                 <div class="timeline-meta">
-                  <span class="timeline-date">2020 — 2021</span>
-                  <span class="timeline-location">Swisscom Schweiz AG</span>
+                  <span class="timeline-date" data-i18n="career.job4Date">2020 — 2021</span>
+                  <span class="timeline-location" data-i18n="career.job4Location">Swisscom Schweiz AG</span>
                 </div>
-                <h3 class="timeline-title">Fullstack Engineer</h3>
+                <h3 class="timeline-title" data-i18n="career.job4Title">Fullstack Engineer</h3>
                 <ul class="timeline-points">
-                  <li>Built customer-facing features with Java Spring Boot + Angular.</li>
-                  <li>Improved CI pipelines and pair-programmed with junior engineers.</li>
+                  <li data-i18n="career.job4Point1">Built customer-facing features with Java Spring Boot + Angular.</li>
+                  <li data-i18n="career.job4Point2">Improved CI pipelines and pair-programmed with junior engineers.</li>
                 </ul>
               </article>
             </li>
@@ -485,13 +557,13 @@
               <div class="timeline-node" aria-hidden="true"></div>
               <article class="timeline-card">
                 <div class="timeline-meta">
-                  <span class="timeline-date">2016 — 2020</span>
-                  <span class="timeline-location">Swisscom AG</span>
+                  <span class="timeline-date" data-i18n="career.job5Date">2016 — 2020</span>
+                  <span class="timeline-location" data-i18n="career.job5Location">Swisscom AG</span>
                 </div>
-                <h3 class="timeline-title">Apprentice Software Engineer</h3>
+                <h3 class="timeline-title" data-i18n="career.job5Title">Apprentice Software Engineer</h3>
                 <ul class="timeline-points">
-                  <li>Shipped my first Angular application as a diploma project.</li>
-                  <li>Learned enterprise-grade quality standards and customer empathy.</li>
+                  <li data-i18n="career.job5Point1">Shipped my first Angular application as a diploma project.</li>
+                  <li data-i18n="career.job5Point2">Learned enterprise-grade quality standards and customer empathy.</li>
                 </ul>
               </article>
             </li>
@@ -501,35 +573,49 @@
     </section>
   </main>
 
+  <!-- Contact Form Section -->
+  <section id="contact" class="contact-section bg-slate-900 border-t border-sapphire/30 py-16 px-4">
+    <div class="container mx-auto max-w-xl">
+      <h2 class="text-3xl font-bold mb-6 text-sapphire-400" data-i18n="contact.heading">Contact Me</h2>
+      <form method="POST" class="space-y-6 bg-slate-800 rounded-2xl p-8 shadow-lg">
+        <div>
+          <label for="contact-email" class="block text-slate-300 font-medium mb-2" data-i18n="contact.emailLabel">Your email</label>
+          <input id="contact-email" name="email" type="email" required autocomplete="email" class="w-full px-4 py-2 rounded-lg bg-slate-900 border border-sapphire-600 focus:outline-none focus:ring-2 focus:ring-sapphire-400 text-white" placeholder="you@email.com" data-i18n-placeholder="contact.emailPlaceholder">
+        </div>
+        <div>
+          <label for="contact-message" class="block text-slate-300 font-medium mb-2" data-i18n="contact.messageLabel">Your message</label>
+          <textarea id="contact-message" name="message" required rows="5" class="w-full px-4 py-2 rounded-lg bg-slate-900 border border-sapphire-600 focus:outline-none focus:ring-2 focus:ring-sapphire-400 text-white" placeholder="How can I help you?" data-i18n-placeholder="contact.messagePlaceholder"></textarea>
+        </div>
+        <button type="submit" class="w-full py-3 rounded-lg bg-sapphire-600 hover:bg-sapphire-700 text-white font-semibold text-lg transition" data-i18n="contact.send">Send</button>
+      </form>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer class="site-footer bg-slate-900 border-t border-slate-800 py-12" aria-labelledby="footer-heading">
-    <div class="container mx-auto px-4 space-y-8">
-      <div class="footer-grid">
-        <div>
-          <p id="footer-heading" class="footer-kicker">Let’s build calm, resilient software.</p>
-        </div>
-        <div class="footer-divider" aria-hidden="true"></div>
-        <div class="footer-links" aria-label="Site links">
-          <a href="#services">Services</a>
-          <a href="#skills">Skills</a>
-          <a href="#career">Career</a>
-        </div>
-        <div class="footer-social" aria-label="Social links">
-          <a href="https://www.linkedin.com/in/joel-sahli" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn profile">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5 2.5 2.5 0 0 1 4.98 3.5zm.02 4.5h-.02v12h4v-12zm6 0h-4v12h4v-6.5c0-1.77 2-1.92 2 0V20h4v-7.5c0-4.58-5-4.41-6-2.16z" />
-            </svg>
-          </a>
-          <a href="https://github.com/JoeyTheCoder" target="_blank" rel="noreferrer noopener" aria-label="GitHub profile">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.93c.58.11.79-.25.79-.56v-2c-3.2.7-3.87-1.39-3.87-1.39a3.06 3.06 0 0 0-1.28-1.7c-1.05-.72.08-.7.08-.7a2.43 2.43 0 0 1 1.77 1.2 2.47 2.47 0 0 0 3.37 1 2.46 2.46 0 0 1 .73-1.55c-2.55-.29-5.23-1.28-5.23-5.69a4.45 4.45 0 0 1 1.18-3.08 4.13 4.13 0 0 1 .11-3.05s.96-.31 3.14 1.18a10.8 10.8 0 0 1 5.72 0c2.18-1.49 3.14-1.18 3.14-1.18a4.13 4.13 0 0 1 .12 3.05 4.44 4.44 0 0 1 1.18 3.08c0 4.43-2.68 5.39-5.24 5.67a2.72 2.72 0 0 1 .78 2.11v3.12c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z" />
-            </svg>
-          </a>
-        </div>
+    <div class="container mx-auto px-4 flex flex-col items-center gap-8">
+      <p id="footer-heading" class="footer-kicker text-center text-lg mb-2" data-i18n="footer.kicker">Let's build calm, resilient software.</p>
+      <nav class="footer-links flex gap-6 justify-center mb-2" aria-label="Site links">
+        <a href="#services" data-i18n="nav.services">Services</a>
+        <a href="#skills" data-i18n="nav.skills">Skills</a>
+        <a href="#career" data-i18n="nav.career">Career</a>
+      </nav>
+      <div class="footer-social flex gap-6 justify-center mb-2" aria-label="Social links">
+        <a href="https://www.linkedin.com/in/joel-sahli-26a484174" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn profile">
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="w-6 h-6">
+            <path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5 2.5 2.5 0 0 1 4.98 3.5zm.02 4.5h-.02v12h4v-12zm6 0h-4v12h4v-6.5c0-1.77 2-1.92 2 0V20h4v-7.5c0-4.58-5-4.41-6-2.16z" />
+          </svg>
+        </a>
+        <a href="https://github.com/JoeyTheCoder" target="_blank" rel="noreferrer noopener" aria-label="GitHub profile">
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="w-6 h-6">
+            <path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.93c.58.11.79-.25.79-.56v-2c-3.2.7-3.87-1.39-3.87-1.39a3.06 3.06 0 0 0-1.28-1.7c-1.05-.72.08-.7.08-.7a2.43 2.43 0 0 1 1.77 1.2 2.47 2.47 0 0 0 3.37 1 2.46 2.46 0 0 1 .73-1.55c-2.55-.29-5.23-1.28-5.23-5.69a4.45 4.45 0 0 1 1.18-3.08 4.13 4.13 0 0 1 .11-3.05s.96-.31 3.14 1.18a10.8 10.8 0 0 1 5.72 0c2.18-1.49 3.14-1.18 3.14-1.18a4.13 4.13 0 0 1 .12 3.05 4.44 4.44 0 0 1 1.18 3.08c0 4.43-2.68 5.39-5.24 5.67a2.72 2.72 0 0 1 .78 2.11v3.12c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z" />
+          </svg>
+        </a>
       </div>
-
-      <div class="footer-bottom">
-        <p>© <span id="footer-year">2025</span> Joel Sahli. Built in Switzerland.</p>
+      <div class="footer-bottom flex flex-col sm:flex-row items-center justify-center text-center text-sm text-slate-400 gap-1">
+        <span>© <span id="footer-year">2025</span></span>
+        <span>Joel Sahli</span>
+        <span data-i18n="footer.builtIn">Built in Switzerland.</span>
       </div>
     </div>
   </footer>
