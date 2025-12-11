@@ -21,6 +21,8 @@ jobs:
 
       - name: Build site
         run: npm run build
+        env:
+          VITE_FORMSPREE_ENDPOINT: ${{ secrets.VITE_FORMSPREE_ENDPOINT }}
 
       - name: Copy files to VPS via SSH
         uses: appleboy/scp-action@v0.1.7
