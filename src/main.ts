@@ -186,7 +186,7 @@ function initNavToggle() {
 document.addEventListener('DOMContentLoaded', () => {
   // Set contact form action from env variable
   const formspreeEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT || '';
-  const contactForm = document.querySelector('form[action][method="POST"]');
+  const contactForm = document.getElementById('contact-form');
   if (contactForm && formspreeEndpoint) {
     contactForm.setAttribute('action', formspreeEndpoint);
   }
