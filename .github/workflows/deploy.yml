@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - redesign/sapphire-rebrand
-
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
