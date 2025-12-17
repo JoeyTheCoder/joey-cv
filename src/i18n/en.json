@@ -5,6 +5,7 @@
   },
   "nav": {
     "about": "About",
+    "projects": "Projects",
     "services": "Services",
     "skills": "Skills",
     "career": "Career",
@@ -40,7 +41,37 @@
     "waysOfWorkingList1": "Product-first delivery: align roadmap and work to measurable outcomes.",
     "waysOfWorkingList2": "Hands-on development across frontend and backend.",
     "waysOfWorkingList3": "Pairing, code reviews, and a quality-first engineering mindset.",
-    "scrollToServices": "Scroll to services section"
+    "scrollToProjects": "Scroll to projects section"
+  },
+  "projects": {
+    "kicker": "FEATURED WORK",
+    "heading": "Projects",
+    "subheading": "A selection of recent projects I've worked on",
+    "viewProject": "View Project",
+    "closeModal": "Close modal",
+    "galleryPrev": "Previous image",
+    "galleryNext": "Next image",
+    "techStack": "Tech Stack",
+    "role": "Role",
+    "year": "Year",
+    "visitSite": "Visit Site",
+    "viewCode": "View Code",
+    "scrollToServices": "Scroll to services section",
+    "sapphirix": {
+      "title": "Sapphirix",
+      "shortDescription": "A modern portfolio template featuring stunning animations and a dark sapphire theme.",
+      "thumbnailAlt": "Sapphirix project screenshot showing the hero section"
+    },
+    "soulomusic": {
+      "title": "Soulomusic",
+      "shortDescription": "Official musician website with music integration, tour dates, booking, and a dynamic journey timeline.",
+      "thumbnailAlt": "Soulomusic project screenshot showing the home page"
+    },
+    "tmd": {
+      "title": "That's My Duo",
+      "shortDescription": "AI-powered League of Legends companion built for the Rift Rewind Hackathon 2025.",
+      "thumbnailAlt": "That's My Duo project screenshot showing the main interface"
+    }
   },
   "services": {
     "kicker": "HOW WE CAN PARTNER",

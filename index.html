@@ -88,6 +88,7 @@
       <div class="nav-menu" id="primary-nav">
         <div class="nav-links" role="list">
           <a href="#about" role="listitem" data-i18n="nav.about">About</a>
+          <a href="#projects" role="listitem" data-i18n="nav.projects">Projects</a>
           <a href="#services" role="listitem" data-i18n="nav.services">Services</a>
           <a href="#skills" role="listitem" data-i18n="nav.skills">Skills</a>
           <a href="#career" role="listitem" data-i18n="nav.career">Career</a>
@@ -266,7 +267,7 @@
         </div>
 
         <div class="about-scroll">
-          <button class="scroll-arrow animate-bounce bg-transparent border-0 cursor-pointer p-2 hover:scale-110 transition-transform focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sapphire/50 rounded-full" aria-label="Scroll to services section" data-i18n-aria-label="about.scrollToServices" data-scroll-to="services">
+          <button class="scroll-arrow animate-bounce bg-transparent border-0 cursor-pointer p-2 hover:scale-110 transition-transform focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sapphire/50 rounded-full" aria-label="Scroll to projects section" data-i18n-aria-label="about.scrollToProjects" data-scroll-to="projects">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-sapphire" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
             </svg>
@@ -274,6 +275,168 @@
         </div>
       </div>
     </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section py-20 bg-slate-900" aria-labelledby="projects-heading">
+      <div class="container mx-auto px-4">
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+          <p class="section-kicker" data-i18n="projects.kicker">FEATURED WORK</p>
+          <h2 id="projects-heading" class="text-4xl md:text-5xl font-bold mb-4" data-i18n="projects.heading">Projects</h2>
+          <p class="text-xl text-slate-300 mb-8" data-i18n="projects.subheading">A selection of recent projects I've worked on</p>
+          <div class="w-24 h-1 bg-gradient-to-r from-sapphire to-red-500 mx-auto rounded-full" aria-hidden="true"></div>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid" role="list">
+          <!-- Project 1: Sapphirix -->
+          <article class="project-card" role="listitem" data-project="sapphirix" tabindex="0" aria-label="View Sapphirix project details">
+            <div class="project-card-thumbnail">
+              <img 
+                src="assets/img/sapphirix/sapphirix-00-hero.png" 
+                alt="Sapphirix project screenshot showing the hero section"
+                data-i18n-alt="projects.sapphirix.thumbnailAlt"
+                loading="lazy"
+              >
+              <div class="project-card-overlay">
+                <span class="project-card-view" data-i18n="projects.viewProject">View Project</span>
+              </div>
+            </div>
+            <div class="project-card-content">
+              <h3 class="project-card-title" data-i18n="projects.sapphirix.title">Sapphirix</h3>
+              <p class="project-card-description" data-i18n="projects.sapphirix.shortDescription">A modern portfolio template featuring stunning animations and a dark sapphire theme.</p>
+            </div>
+          </article>
+
+          <!-- Project 2: Soulomusic -->
+          <article class="project-card" role="listitem" data-project="soulomusic" tabindex="0" aria-label="View Soulomusic project details">
+            <div class="project-card-thumbnail">
+              <img 
+                src="assets/img/soulomusic/soulomusic-01-home.png" 
+                alt="Soulomusic project screenshot showing the home page"
+                data-i18n-alt="projects.soulomusic.thumbnailAlt"
+                loading="lazy"
+              >
+              <div class="project-card-overlay">
+                <span class="project-card-view" data-i18n="projects.viewProject">View Project</span>
+              </div>
+            </div>
+            <div class="project-card-content">
+              <h3 class="project-card-title" data-i18n="projects.soulomusic.title">Soulomusic</h3>
+              <p class="project-card-description" data-i18n="projects.soulomusic.shortDescription">Official musician website with music integration, tour dates, booking, and a dynamic journey timeline.</p>
+            </div>
+          </article>
+
+          <!-- Project 3: That's My Duo -->
+          <article class="project-card" role="listitem" data-project="tmd" tabindex="0" aria-label="View That's My Duo project details">
+            <div class="project-card-thumbnail">
+              <img 
+                src="assets/img/tmd/tmd-01-that's-my-duo.png" 
+                alt="That's My Duo project screenshot showing the main interface"
+                data-i18n-alt="projects.tmd.thumbnailAlt"
+                loading="lazy"
+              >
+              <div class="project-card-overlay">
+                <span class="project-card-view" data-i18n="projects.viewProject">View Project</span>
+              </div>
+            </div>
+            <div class="project-card-content">
+              <h3 class="project-card-title" data-i18n="projects.tmd.title">That's My Duo</h3>
+              <p class="project-card-description" data-i18n="projects.tmd.shortDescription">AI-powered League of Legends companion built for the Rift Rewind Hackathon 2025.</p>
+            </div>
+          </article>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="flex justify-center mt-16">
+          <button class="scroll-arrow animate-bounce bg-transparent border-0 cursor-pointer p-2 hover:scale-110 transition-transform focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sapphire/50 rounded-full" aria-label="Scroll to services section" data-i18n-aria-label="projects.scrollToServices" data-scroll-to="services">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-sapphire" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Modal -->
+    <div id="project-modal" class="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+      <div class="project-modal-backdrop"></div>
+      <div class="project-modal-container">
+        <div class="project-modal-content">
+          <button class="project-modal-close" aria-label="Close modal" data-i18n-aria-label="projects.closeModal">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+          
+          <!-- Modal Header -->
+          <header class="project-modal-header">
+            <h3 id="modal-title" class="project-modal-title"></h3>
+            <p class="project-modal-tagline"></p>
+          </header>
+
+          <!-- Modal Gallery -->
+          <div class="project-modal-gallery">
+            <button class="gallery-nav gallery-prev" aria-label="Previous image" data-i18n-aria-label="projects.galleryPrev">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <div class="gallery-viewport">
+              <img class="gallery-image" src="" alt="" loading="lazy">
+            </div>
+            <button class="gallery-nav gallery-next" aria-label="Next image" data-i18n-aria-label="projects.galleryNext">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+            <div class="gallery-dots"></div>
+          </div>
+
+          <!-- Modal Body -->
+          <div class="project-modal-body">
+            <p class="project-modal-description"></p>
+            
+            <!-- Tech Stack -->
+            <div class="project-modal-tech">
+              <h4 data-i18n="projects.techStack">Tech Stack</h4>
+              <div class="project-tech-chips"></div>
+            </div>
+
+            <!-- Meta Info -->
+            <div class="project-modal-meta">
+              <div class="project-meta-item">
+                <span class="project-meta-label" data-i18n="projects.role">Role</span>
+                <span class="project-meta-value project-role"></span>
+              </div>
+              <div class="project-meta-item">
+                <span class="project-meta-label" data-i18n="projects.year">Year</span>
+                <span class="project-meta-value project-year"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal Footer -->
+          <footer class="project-modal-footer">
+            <a href="#" class="project-link project-link-live" target="_blank" rel="noopener noreferrer">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+              <span data-i18n="projects.visitSite">Visit Site</span>
+            </a>
+            <a href="#" class="project-link project-link-repo" target="_blank" rel="noopener noreferrer">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.93c.58.11.79-.25.79-.56v-2c-3.2.7-3.87-1.39-3.87-1.39a3.06 3.06 0 0 0-1.28-1.7c-1.05-.72.08-.7.08-.7a2.43 2.43 0 0 1 1.77 1.2 2.47 2.47 0 0 0 3.37 1 2.46 2.46 0 0 1 .73-1.55c-2.55-.29-5.23-1.28-5.23-5.69a4.45 4.45 0 0 1 1.18-3.08 4.13 4.13 0 0 1 .11-3.05s.96-.31 3.14 1.18a10.8 10.8 0 0 1 5.72 0c2.18-1.49 3.14-1.18 3.14-1.18a4.13 4.13 0 0 1 .12 3.05 4.44 4.44 0 0 1 1.18 3.08c0 4.43-2.68 5.39-5.24 5.67a2.72 2.72 0 0 1 .78 2.11v3.12c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/>
+              </svg>
+              <span data-i18n="projects.viewCode">View Code</span>
+            </a>
+          </footer>
+        </div>
+      </div>
+    </div>
 
     <!-- Services Section -->
     <section id="services" class="services-section py-20 bg-slate-800" aria-labelledby="services-heading">
@@ -596,6 +759,7 @@
     <div class="container mx-auto px-4 flex flex-col items-center gap-8">
       <p id="footer-heading" class="footer-kicker text-center text-lg mb-2" data-i18n="footer.kicker">Let's build calm, resilient software.</p>
       <nav class="footer-links flex gap-6 justify-center mb-2" aria-label="Site links">
+        <a href="#projects" data-i18n="nav.projects">Projects</a>
         <a href="#services" data-i18n="nav.services">Services</a>
         <a href="#skills" data-i18n="nav.skills">Skills</a>
         <a href="#career" data-i18n="nav.career">Career</a>

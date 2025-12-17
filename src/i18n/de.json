@@ -5,6 +5,7 @@
   },
   "nav": {
     "about": "Über mich",
+    "projects": "Projekte",
     "services": "Dienstleistungen",
     "skills": "Skills",
     "career": "Karriere",
@@ -40,7 +41,37 @@
     "waysOfWorkingList1": "Product-first Lieferung: Roadmap und Arbeit auf messbare Ergebnisse ausrichten.",
     "waysOfWorkingList2": "Hands-on Entwicklung über Frontend und Backend hinweg.",
     "waysOfWorkingList3": "Pair Programming, Code Reviews und eine Qualität-zuerst Ingenieursmentalität.",
-    "scrollToServices": "Zum Abschnitt Dienstleistungen scrollen"
+    "scrollToProjects": "Zum Abschnitt Projekte scrollen"
+  },
+  "projects": {
+    "kicker": "AUSGEWÄHLTE ARBEITEN",
+    "heading": "Projekte",
+    "subheading": "Eine Auswahl meiner aktuellen Projekte",
+    "viewProject": "Projekt ansehen",
+    "closeModal": "Modal schliessen",
+    "galleryPrev": "Vorheriges Bild",
+    "galleryNext": "Nächstes Bild",
+    "techStack": "Technologien",
+    "role": "Rolle",
+    "year": "Jahr",
+    "visitSite": "Seite besuchen",
+    "viewCode": "Code ansehen",
+    "scrollToServices": "Zum Abschnitt Dienstleistungen scrollen",
+    "sapphirix": {
+      "title": "Sapphirix",
+      "shortDescription": "Modernes Portfolio-Template mit beeindruckenden Animationen und einem dunklen Saphir-Theme.",
+      "thumbnailAlt": "Sapphirix Projekt-Screenshot der Hero-Sektion"
+    },
+    "soulomusic": {
+      "title": "Soulomusic",
+      "shortDescription": "Offizielle Musiker-Website mit Musikintegration, Tourdaten, Booking und dynamischer Journey-Timeline.",
+      "thumbnailAlt": "Soulomusic Projekt-Screenshot der Startseite"
+    },
+    "tmd": {
+      "title": "That's My Duo",
+      "shortDescription": "KI-gestützter League-of-Legends-Begleiter, entwickelt für den Rift Rewind Hackathon 2025.",
+      "thumbnailAlt": "That's My Duo Projekt-Screenshot der Hauptoberfläche"
+    }
   },
   "services": {
     "kicker": "WIE WIR ZUSAMMENARBEITEN KÖNNEN",
