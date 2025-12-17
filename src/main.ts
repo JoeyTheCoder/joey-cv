@@ -75,7 +75,7 @@ const projectsDataEn: Record<string, ProjectData> = {
     techStack: ['TypeScript', 'Vite', 'Tailwind CSS', 'HTML5', 'CSS3'],
     role: 'Full Stack Developer',
     year: '2025',
-    liveUrl: 'https://soulomusic.ch',
+    liveUrl: 'https://soulomusic.net',
     repoUrl: null,
     images: [
       soulomusicHome,
@@ -133,7 +133,7 @@ const projectsDataDe: Record<string, ProjectData> = {
     techStack: ['TypeScript', 'Vite', 'Tailwind CSS', 'HTML5', 'CSS3'],
     role: 'Full Stack Developer',
     year: '2025',
-    liveUrl: 'https://soulomusic.ch',
+    liveUrl: 'https://soulomusic.net',
     repoUrl: null,
     images: [
       soulomusicHome,
@@ -390,7 +390,11 @@ function openProjectModal(projectId: string) {
     const url = normalizeUrl(project.liveUrl)
     if (url) {
       liveLink.href = url
+      liveLink.target = '_blank'
+      liveLink.rel = 'noopener'
       liveLink.style.display = 'inline-flex'
+      // Remove any click handler that might prevent default
+      liveLink.onclick = null;
     } else {
       liveLink.style.display = 'none'
     }
@@ -400,7 +404,10 @@ function openProjectModal(projectId: string) {
     const url = normalizeUrl(project.repoUrl)
     if (url) {
       repoLink.href = url
+      repoLink.target = '_blank'
+      repoLink.rel = 'noopener'
       repoLink.style.display = 'inline-flex'
+      repoLink.onclick = null;
     } else {
       repoLink.style.display = 'none'
     }
@@ -536,8 +543,11 @@ function updateOpenProjectModalCopy() {
 
   if (liveLink) {
     if (project.liveUrl) {
-      liveLink.href = project.liveUrl
+      liveLink.href = normalizeUrl(project.liveUrl)
+      liveLink.target = '_blank'
+      liveLink.rel = 'noopener'
       liveLink.style.display = 'inline-flex'
+      liveLink.onclick = null;
     } else {
       liveLink.style.display = 'none'
     }
@@ -545,8 +555,11 @@ function updateOpenProjectModalCopy() {
 
   if (repoLink) {
     if (project.repoUrl) {
-      repoLink.href = project.repoUrl
+      repoLink.href = normalizeUrl(project.repoUrl)
+      repoLink.target = '_blank'
+      repoLink.rel = 'noopener'
       repoLink.style.display = 'inline-flex'
+      repoLink.onclick = null;
     } else {
       repoLink.style.display = 'none'
     }
@@ -658,7 +671,8 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   // Feature 6: Enhanced navigation links with navbar offset
-  document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]').forEach(anchor => {
+  // Only attach to nav/menu links, not modal action links
+  document.querySelectorAll<HTMLAnchorElement>('a[href^="#"].nav-link, a[href^="#"].menu-link').forEach(anchor => {
     anchor.addEventListener('click', event => {
       const href = anchor.getAttribute('href')
       if (!href || href === '#') {
