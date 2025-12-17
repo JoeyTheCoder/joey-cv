@@ -393,9 +393,9 @@ function openProjectModal(projectId: string) {
       liveLink.target = '_blank'
       liveLink.rel = 'noopener'
       liveLink.style.display = 'inline-flex'
-      // Remove any click handler that might prevent default
       liveLink.onclick = null;
     } else {
+      liveLink.href = '';
       liveLink.style.display = 'none'
     }
   }
@@ -409,6 +409,7 @@ function openProjectModal(projectId: string) {
       repoLink.style.display = 'inline-flex'
       repoLink.onclick = null;
     } else {
+      repoLink.href = '';
       repoLink.style.display = 'none'
     }
   }
@@ -542,26 +543,30 @@ function updateOpenProjectModalCopy() {
   }
 
   if (liveLink) {
-    if (project.liveUrl) {
-      liveLink.href = normalizeUrl(project.liveUrl)
-      liveLink.target = '_blank'
-      liveLink.rel = 'noopener'
-      liveLink.style.display = 'inline-flex'
+    const url = normalizeUrl(project.liveUrl);
+    if (url) {
+      liveLink.href = url;
+      liveLink.target = '_blank';
+      liveLink.rel = 'noopener';
+      liveLink.style.display = 'inline-flex';
       liveLink.onclick = null;
     } else {
-      liveLink.style.display = 'none'
+      liveLink.href = '';
+      liveLink.style.display = 'none';
     }
   }
 
   if (repoLink) {
-    if (project.repoUrl) {
-      repoLink.href = normalizeUrl(project.repoUrl)
-      repoLink.target = '_blank'
-      repoLink.rel = 'noopener'
-      repoLink.style.display = 'inline-flex'
+    const url = normalizeUrl(project.repoUrl);
+    if (url) {
+      repoLink.href = url;
+      repoLink.target = '_blank';
+      repoLink.rel = 'noopener';
+      repoLink.style.display = 'inline-flex';
       repoLink.onclick = null;
     } else {
-      repoLink.style.display = 'none'
+      repoLink.href = '';
+      repoLink.style.display = 'none';
     }
   }
 
