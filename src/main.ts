@@ -324,6 +324,21 @@ function initNavToggle() {
 }
 
 // Project Modal Functions
+function normalizeUrl(url: string | null): string | null {
+  if (!url) return null;
+  if (/^https?:\/\//i.test(url)) return url;
+  // If it looks like a domain (no slashes, no spaces), add https://
+  if (/^[\w.-]+\.[a-z]{2,}(\/.*)?$/i.test(url)) return 'https://' + url;
+  return url;
+}
+
+function normalizeImagePath(path: string): string {
+  // If already absolute (starts with / or http), return as is
+  if (/^(\/|https?:)/.test(path)) return path;
+  // Otherwise, prefix with / to make it root-relative
+  return '/' + path.replace(/^\/+/, '');
+}
+
 function openProjectModal(projectId: string) {
   const project = getProjectsDataForCurrentLanguage()[projectId]
   if (!project) return
@@ -357,10 +372,11 @@ function openProjectModal(projectId: string) {
       .join('')
   }
 
-  // Set links
+  // Set links (normalize to absolute URLs)
   if (liveLink) {
-    if (project.liveUrl) {
-      liveLink.href = project.liveUrl
+    const url = normalizeUrl(project.liveUrl)
+    if (url) {
+      liveLink.href = url
       liveLink.style.display = 'inline-flex'
     } else {
       liveLink.style.display = 'none'
@@ -368,17 +384,19 @@ function openProjectModal(projectId: string) {
   }
 
   if (repoLink) {
-    if (project.repoUrl) {
-      repoLink.href = project.repoUrl
+    const url = normalizeUrl(project.repoUrl)
+    if (url) {
+      repoLink.href = url
       repoLink.style.display = 'inline-flex'
     } else {
       repoLink.style.display = 'none'
     }
   }
 
-  // Setup gallery
-  updateGalleryImage(project.images, 0)
-  setupGalleryDots(project.images)
+  // Setup gallery with normalized image paths
+  const normalizedImages = project.images.map(normalizeImagePath)
+  updateGalleryImage(normalizedImages, 0)
+  setupGalleryDots(normalizedImages)
 
   // Show modal
   modal.setAttribute('aria-hidden', 'false')
@@ -411,7 +429,7 @@ function updateGalleryImage(images: string[], index: number) {
   if (!galleryImage || !images[index]) return
 
   currentImageIndex = index
-  galleryImage.src = images[index]
+  galleryImage.src = normalizeImagePath(images[index])
   galleryImage.alt = `Project screenshot ${index + 1} of ${images.length}`
 
   // Update dots
@@ -433,7 +451,9 @@ function setupGalleryDots(images: string[]) {
     dot.addEventListener('click', () => {
       const index = parseInt(dot.dataset.index || '0', 10)
       if (currentProjectId) {
-        updateGalleryImage(getProjectsDataForCurrentLanguage()[currentProjectId].images, index)
+        // Use normalized images for gallery navigation
+        const images = getProjectsDataForCurrentLanguage()[currentProjectId].images.map(normalizeImagePath)
+        updateGalleryImage(images, index)
       }
     })
   })
@@ -441,7 +461,7 @@ function setupGalleryDots(images: string[]) {
 
 function navigateGallery(direction: 'prev' | 'next') {
   if (!currentProjectId) return
-  const images = getProjectsDataForCurrentLanguage()[currentProjectId].images
+  const images = getProjectsDataForCurrentLanguage()[currentProjectId].images.map(normalizeImagePath)
   const newIndex = direction === 'next'
     ? (currentImageIndex + 1) % images.length
     : (currentImageIndex - 1 + images.length) % images.length
