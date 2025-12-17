@@ -1,8 +1,21 @@
 // Main TypeScript entry point for Joel Sahli's CV website
 // This file is imported in index.html and serves as the application initialization point
 
+
 import './style.css'
 import { getCurrentLanguage, initI18n } from './i18n'
+
+// Vite image imports for hashed asset URLs
+import sapphirixHero from '../assets/img/sapphirix/sapphirix-00-hero.png';
+import sapphirixAbout from '../assets/img/sapphirix/sapphirix-02-about.png';
+import sapphirixProjects from '../assets/img/sapphirix/sapphirix-03-projects.png';
+import soulomusicHome from '../assets/img/soulomusic/soulomusic-01-home.png';
+import soulomusicAbout from '../assets/img/soulomusic/soulomusic-02-about.png';
+import soulomusicMusic from '../assets/img/soulomusic/soulomusic-03-music.png';
+import soulomusicJourney from '../assets/img/soulomusic/soulomusic-04-journey.png';
+import soulomusicContact from '../assets/img/soulomusic/soulomusic-05-contact.png';
+import tmdHero from '../assets/img/tmd/tmd-01-that\'s-my-duo.png';
+import tmdAbout from '../assets/img/tmd/tmd-03-about.png';
 
 // Motion preference handling
 const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
@@ -47,9 +60,9 @@ const projectsDataEn: Record<string, ProjectData> = {
     liveUrl: 'https://sapphirix.ch',
     repoUrl: null,
     images: [
-      'assets/img/sapphirix/sapphirix-00-hero.png',
-      'assets/img/sapphirix/sapphirix-02-about.png',
-      'assets/img/sapphirix/sapphirix-03-projects.png',
+      sapphirixHero,
+      sapphirixAbout,
+      sapphirixProjects,
     ],
     thumbnailAlt: 'Sapphirix project screenshot showing the hero section'
   },
@@ -65,11 +78,11 @@ const projectsDataEn: Record<string, ProjectData> = {
     liveUrl: 'https://soulomusic.ch',
     repoUrl: null,
     images: [
-      'assets/img/soulomusic/soulomusic-01-home.png',
-      'assets/img/soulomusic/soulomusic-02-about.png',
-      'assets/img/soulomusic/soulomusic-03-music.png',
-      'assets/img/soulomusic/soulomusic-04-journey.png',
-      'assets/img/soulomusic/soulomusic-05-contact.png'
+      soulomusicHome,
+      soulomusicAbout,
+      soulomusicMusic,
+      soulomusicJourney,
+      soulomusicContact
     ],
     thumbnailAlt: 'Soulomusic project screenshot showing the home page'
   },
@@ -85,8 +98,8 @@ const projectsDataEn: Record<string, ProjectData> = {
     liveUrl: "tmd.sapphirix.ch",
     repoUrl: 'https://github.com/JoeyTheCoder/RiftRewindHackathon',
     images: [
-      "assets/img/tmd/tmd-01-that's-my-duo.png",
-      'assets/img/tmd/tmd-03-about.png'
+      tmdHero,
+      tmdAbout
     ],
     thumbnailAlt: "That's My Duo project screenshot showing the main interface"
   }
@@ -105,9 +118,9 @@ const projectsDataDe: Record<string, ProjectData> = {
     liveUrl: 'https://sapphirix.ch',
     repoUrl: null,
     images: [
-      'assets/img/sapphirix/sapphirix-00-hero.png',
-      'assets/img/sapphirix/sapphirix-02-about.png',
-      'assets/img/sapphirix/sapphirix-03-projects.png'
+      sapphirixHero,
+      sapphirixAbout,
+      sapphirixProjects
     ],
     thumbnailAlt: 'Sapphirix Projekt-Screenshot der Hero-Sektion'
   },
@@ -123,11 +136,11 @@ const projectsDataDe: Record<string, ProjectData> = {
     liveUrl: 'https://soulomusic.ch',
     repoUrl: null,
     images: [
-      'assets/img/soulomusic/soulomusic-01-home.png',
-      'assets/img/soulomusic/soulomusic-02-about.png',
-      'assets/img/soulomusic/soulomusic-03-music.png',
-      'assets/img/soulomusic/soulomusic-04-journey.png',
-      'assets/img/soulomusic/soulomusic-05-contact.png'
+      soulomusicHome,
+      soulomusicAbout,
+      soulomusicMusic,
+      soulomusicJourney,
+      soulomusicContact
     ],
     thumbnailAlt: 'Soulomusic Projekt-Screenshot der Startseite'
   },
@@ -143,8 +156,8 @@ const projectsDataDe: Record<string, ProjectData> = {
     liveUrl: 'tmd.sapphirix.ch',
     repoUrl: 'https://github.com/JoeyTheCoder/RiftRewindHackathon',
     images: [
-      "assets/img/tmd/tmd-01-that's-my-duo.png",
-      'assets/img/tmd/tmd-03-about.png'
+      tmdHero,
+      tmdAbout
     ],
     thumbnailAlt: "That's My Duo Projekt-Screenshot der Hauptoberfläche"
   }
