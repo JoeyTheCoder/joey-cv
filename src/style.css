@@ -440,12 +440,22 @@ img[loading="lazy"] {
   filter: blur(40px);
   transform: translateZ(0);
 }
+
 .hero-section {
   position: relative;
   z-index: 1;
   padding-top: clamp(4rem, 8vw, 6.5rem);
   padding-bottom: clamp(3rem, 7vw, 5rem);
+  padding-left: clamp(1.25rem, 5vw, 3.5rem);
+  padding-right: clamp(1.25rem, 5vw, 3.5rem);
   min-height: calc(100vh - var(--navbar-height));
+}
+
+/* Constrain hero-shell width for large screens */
+.hero-shell {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @supports (height: 100dvh) {
