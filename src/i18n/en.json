@@ -1,12 +1,11 @@
 {
   "meta": {
-    "description": "Joel Sahli - Fullstack Software Engineer, DevOps Engineer, and Agile Leader based in Switzerland. Professional portfolio and CV.",
+    "description": "Joel Sahli - Fullstack Software Engineer, DevOps Engineer, and Agile Leader from Switzerland. Professional portfolio and CV.",
     "title": "Joel Sahli | Fullstack Software Engineer"
   },
   "nav": {
     "about": "About",
     "projects": "Projects",
-    "services": "Services",
     "skills": "Skills",
     "career": "Career",
     "contact": "Contact",
@@ -16,38 +15,37 @@
     "name": "Joel Sahli",
     "tagline": "Fullstack Software Engineer<br>DevOps Engineer<br>Agile Leader<br>Based in Switzerland",
     "typewriterText": "Fullstack Software Engineer<br>DevOps Engineer<br>Agile Leader<br>Based in Switzerland",
-    "viewServices": "View Services",
     "getInTouch": "Get in Touch",
     "profileAlt": "Portrait of Joel Sahli, Fullstack Software Engineer",
     "scrollToAbout": "Scroll to about section"
   },
   "about": {
     "heading": "About me",
-    "lead": "I build software people enjoy using. I explain the process in plain language and partner with product teams to turn tricky problems into simple, human-friendly products.",
-    "paragraph": "I help deliver great UX, production-ready code, and DevOps that scales with your ambitions. I'm always learning and excited by interesting challenges — if you'd like someone who gets things done without the jargon, let's talk.",
+    "lead": "I develop software that turns complex problems into simple, user-friendly solutions. I can explain difficult technical concepts in plain language and work closely with product teams to deliver great products.",
+    "paragraph": "I deliver products with great care and quality. I am always eager to learn and enjoy interesting challenges - if you are looking for someone who integrates well into different teams and brings enthusiasm for every kind of technology, let me know.",
     "metaYearsValue": "9 Years",
     "metaYearsLabel": "Professional Experience",
-    "metaProjectsValue": "30+",
+    "metaProjectsValue": "20+",
     "metaProjectsLabel": "Projects shipped",
-    "metaLeadershipValue": "3",
-    "metaLeadershipLabel": "Leadership roles",
+    "metaLeadershipValue": "2",
+    "metaLeadershipLabel": "Professional leadership roles in Scrum teams",
     "howIHelpHeading": "How I help teams",
     "howIHelpParagraph": "From sketch to scale: I connect good architecture with dependable delivery so businesses can move confidently.",
     "howIHelpList1": "Frontends that feel snappy and are easy to maintain (Angular, Vite, Tailwind).",
     "howIHelpList2": "APIs and integrations built for reliability and clarity (Java, .NET, Python).",
     "howIHelpList3": "Repeatable release pipelines and infra-as-code using Kubernetes and Azure DevOps.",
     "waysOfWorkingHeading": "Ways of working",
-    "waysOfWorkingParagraph": "Scrum‑savvy full‑stack developer who builds products tailored to your needs. I use practical rhythms where they help, then focus on delivering the right outcomes — not selling process, shipping product.",
+    "waysOfWorkingParagraph": "Scrum-savvy fullstack developer who tailors products to your needs. I use practical rhythms where they help, and then focus on the right outcomes - not selling processes, but delivering products.",
     "waysOfWorkingList1": "Product-first delivery: align roadmap and work to measurable outcomes.",
     "waysOfWorkingList2": "Hands-on development across frontend and backend.",
     "waysOfWorkingList3": "Pairing, code reviews, and a quality-first engineering mindset.",
     "scrollToProjects": "Scroll to projects section"
   },
   "projects": {
-    "kicker": "FEATURED WORK",
+    "kicker": "SELECTED WORK",
     "heading": "Projects",
-    "subheading": "A selection of recent projects I've worked on",
-    "viewProject": "View Project",
+    "subheading": "A selection of my current projects",
+    "viewProject": "View project",
     "closeModal": "Close modal",
     "galleryPrev": "Previous image",
     "galleryNext": "Next image",
@@ -56,10 +54,9 @@
     "year": "Year",
     "visitSite": "Visit Site",
     "viewCode": "View Code",
-    "scrollToServices": "Scroll to services section",
     "sapphirix": {
       "title": "Sapphirix",
-      "shortDescription": "A modern portfolio template featuring stunning animations and a dark sapphire theme.",
+      "shortDescription": "Modern portfolio with impressive animations and a dark sapphire theme.",
       "thumbnailAlt": "Sapphirix project screenshot showing the hero section"
     },
     "soulomusic": {
@@ -73,36 +70,9 @@
       "thumbnailAlt": "That's My Duo project screenshot showing the main interface"
     }
   },
-  "services": {
-    "kicker": "HOW WE CAN PARTNER",
-    "heading": "Your company in focus",
-    "intro": "Whether you need a new website, want to automate your business, or are looking for expert advice, I help small businesses grow with modern, reliable technology. Let's find the right solution for your goals and budget.",
-    "webPlatformsTitle": "Web Platforms",
-    "webPlatformsTagline": "Sites · systems · automation",
-    "webPlatformsList1": "Launch a website that works for you: attract new customers, showcase your business, and update your content easily—no tech skills needed.",
-    "webPlatformsList2": "Get analytics to understand your visitors and localization to reach more people.",
-    "webPlatformsList3": "Design systems that keep your site looking sharp and consistent.",
-    "webPlatformsList4": "Built with fast, modern tools for top performance.",
-    "productAppsTitle": "Product Applications",
-    "productAppsTagline": "Portals · workflows · APIs",
-    "productAppsList1": "Automate your daily tasks and connect your favorite tools—save time and reduce errors.",
-    "productAppsList2": "Custom portals and workflows tailored to your business needs.",
-    "productAppsList3": "Reliable APIs and integrations so everything works together seamlessly.",
-    "productAppsList4": "Preview changes safely before they go live.",
-    "automationTitle": "Automation & Ops",
-    "automationTagline": "DevOps · FinOps · reliability",
-    "automationList1": "Keep your business running smoothly and securely with expert automation.",
-    "automationList2": "Monitor your systems with clear dashboards and alerts.",
-    "automationList3": "Get help setting up cloud, backups, and security—no more tech headaches.",
-    "automationList4": "Proven solutions for peace of mind.",
-    "footerKicker": "Need something custom?",
-    "footerText": "Send over your deck or backlog—we'll co-create a plan within 48 hours.",
-    "footerCta": "Contact Me",
-    "scrollToSkills": "Scroll to skills section"
-  },
   "skills": {
     "heading": "Skills & Technologies",
-    "subheading": "Tools and technologies I work with daily",
+    "subheading": "Tools and technologies I work with every day",
     "frontendTitle": "Frontend Development",
     "frontendMeta": "Design systems • Accessibility • High-performance SPAs",
     "frontendSpotlight1": "Design systems",
@@ -130,15 +100,15 @@
     "job1Date": "2023 — Today",
     "job1Location": "Infosoft Systems AG",
     "job1Title": "Fullstack Software Engineer",
-    "job1Point1": "Extended Ionic mobile apps and rolled out an offline-first document platform.",
-    "job1Point2": "Modernized legacy .NET services and APIs without interrupting production traffic.",
+    "job1Point1": "Expanded Ionic mobile apps and rolled out an offline-first document platform.",
+    "job1Point2": "Modernized legacy .NET services and APIs without interrupting production operations.",
     "job1Point3": "Introduced automated release gates and code quality dashboards.",
     "job2Date": "2022 — 2023",
     "job2Location": "Swisscom Schweiz AG",
     "job2Title": "Scrum Master",
-    "job2Point1": "Facilitated a distributed team of eight across Zürich, Riga, and Rotterdam.",
-    "job2Point2": "Launched a community of practice to share learnings between teams.",
-    "job2Point3": "Tracked delivery health with lean metrics and calm stakeholder comms.",
+    "job2Point1": "Facilitated a distributed team of eight across Zurich, Riga, and Rotterdam.",
+    "job2Point2": "Started a community of practice to share insights between teams.",
+    "job2Point3": "Tracked delivery health with lean metrics and calm stakeholder communication.",
     "job3Date": "2021 — 2022",
     "job3Location": "Swisscom Schweiz AG",
     "job3Title": "DevOps Engineer",
@@ -148,13 +118,13 @@
     "job4Date": "2020 — 2021",
     "job4Location": "Swisscom Schweiz AG",
     "job4Title": "Fullstack Engineer",
-    "job4Point1": "Built customer-facing features with Java Spring Boot + Angular.",
-    "job4Point2": "Improved CI pipelines and pair-programmed with junior engineers.",
+    "job4Point1": "Developed customer-facing features with Java Spring Boot + Angular.",
+    "job4Point2": "Improved CI pipelines and did pair programming with junior engineers.",
     "job5Date": "2016 — 2020",
     "job5Location": "Swisscom AG",
-    "job5Title": "Apprentice Software Engineer",
-    "job5Point1": "Shipped my first Angular application as a diploma project.",
-    "job5Point2": "Learned enterprise-grade quality standards and customer empathy."
+    "job5Title": "Software Engineering Apprentice",
+    "job5Point1": "Delivered my first Angular application as a diploma project.",
+    "job5Point2": "Learned enterprise-ready quality standards and customer empathy."
   },
   "contact": {
     "heading": "Contact Me",
@@ -165,7 +135,7 @@
     "send": "Send"
   },
   "footer": {
-    "kicker": "Let's build quality software together.",
-    "builtIn": "Built in Switzerland."
+    "kicker": "Let's build high-quality software together.",
+    "builtIn": "Made in Switzerland."
   }
 }

@@ -1,6 +1,6 @@
 # Joel Sahli - Personal CV & Portfolio Website
 
-A modern, professional personal website showcasing skills, experience, and services as a Fullstack Software Engineer.
+A modern, professional personal website showcasing skills, experience, and selected work as a Fullstack Software Engineer.
 
 ## 🎨 Design Rationale
 
@@ -110,7 +110,7 @@ Edit `index.html` to update:
 - **Contact email**: Lines 27, 78, 221 - `contact@joelsahli.ch`
 - **Name and tagline**: Lines 56-62
 - **About me text**: Lines 139-153
-- **Services**: Lines 178-217
+- **Project cards and modal content**: Projects section and `src/main.ts`
 - **Skills**: Lines 252-306
 - **Career timeline**: Lines 336-446
 
@@ -119,7 +119,7 @@ Edit `index.html` to update:
 ```
 joey-cv/
 ├── assets/
-│   └── img/               # Images (profile, services, Swiss landscape)
+│   └── img/               # Images (profile, project screenshots, Swiss landscape)
 ├── src/
 │   ├── style.css          # Main stylesheet with CSS variables and utilities
 │   └── main.ts            # TypeScript entry point

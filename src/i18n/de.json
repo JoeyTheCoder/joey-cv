@@ -15,7 +15,6 @@
     "name": "Joel Sahli",
     "tagline": "Fullstack Software Engineer<br>DevOps Engineer<br>Agile Leader<br>aus der Schweiz",
     "typewriterText": "Fullstack Software Engineer<br>DevOps Engineer<br>Agile Leader<br>aus der Schweiz",
-    "viewServices": "Dienstleistungen",
     "getInTouch": "Kontakt aufnehmen",
     "profileAlt": "Portrait von Joel Sahli, Fullstack Software Engineer",
     "scrollToAbout": "Zum Abschnitt Über mich scrollen"
@@ -57,7 +56,7 @@
     "viewCode": "Code ansehen",
     "sapphirix": {
       "title": "Sapphirix",
-      "shortDescription": "Modernes Portfolio-Template mit beeindruckenden Animationen und einem dunklen Saphir-Theme.",
+      "shortDescription": "Modernes Portfolio mit beeindruckenden Animationen und einem dunklen Saphir-Theme.",
       "thumbnailAlt": "Sapphirix Projekt-Screenshot der Hero-Sektion"
     },
     "soulomusic": {
